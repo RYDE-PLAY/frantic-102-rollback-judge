@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "case_count": 2,
+  "assertion_error_count": 0,
+  "assertion_errors": [],
+  "case_names": [
+    "critical-signal-rollback",
+    "signal-contradictory-block"
+  ],
+  "receipt_ids": [
+    "sha256:88bcf8881edea3254c81f3a2531cabcb42187c415e155ff971105dd59f57d4e4"
+  ],
+  "graph_case_count": 0
+}

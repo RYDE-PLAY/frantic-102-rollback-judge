@@ -1,0 +1,76 @@
+{
+  "registry_provenance": {
+    "digest": "sha256:b6240d8923723e8a07057dd678104dfecab87594695e5e49d0ed4a0ca53e560e",
+    "profile_digest": "sha256:e1080cba9ca05a1917ad14be5b5f4ea2ad5f91db95d3cfb1e1d5e314fd4759e8",
+    "registry_key_id": "runx-registry-ed25519-v1",
+    "registry_source": "remote https://api.runx.ai",
+    "registry_source_fingerprint": "ba1ac16b631195fd",
+    "skill_id": "ryde-play/rollback-judge",
+    "trust_state": "trusted",
+    "trust_tier": "community",
+    "version": "sha-daf218f5cd7d"
+  },
+  "requests": [
+    {
+      "id": "agent_task.rollback-judge.output",
+      "invocation": {
+        "agent": "reviewer",
+        "envelope": {
+          "allowed_tools": [],
+          "current_context": [],
+          "execution_location": {
+            "skill_directory": "/Users/ryde/.runx/registry-skills/ba1ac16b631195fd/ryde-play/rollback-judge/sha-daf218f5cd7d/a3f693f21e115206/ryde-play/rollback-judge/sha-daf218f5cd7d"
+          },
+          "historical_context": [],
+          "inputs": {
+            "current_version": {
+              "deployed_at": "2026-07-12T03:05:00Z",
+              "digest": "sha256:current-checkout-20260712-3",
+              "version": "2026.07.12.3"
+            },
+            "deploy_signal": {
+              "evidence": {
+                "failing": true,
+                "metric": "http_5xx_rate",
+                "observed": "18.4%",
+                "source_ref": "metrics://checkout/http_5xx_rate/2026-07-12T03:20Z",
+                "threshold": "2%",
+                "window": "15m"
+              },
+              "kind": "error_rate_spike",
+              "severity": "critical"
+            },
+            "forward_fix_evidence": {
+              "review_signoff": null,
+              "test_runs": []
+            },
+            "prior_version": {
+              "deployed_at": "2026-07-12T01:40:00Z",
+              "digest": "sha256:prior-checkout-20260712-2",
+              "health": "last_known_good",
+              "version": "2026.07.12.2"
+            }
+          },
+          "instructions": "Produce exactly one review decision from the supplied deploy_signal, current_version, prior_version, and forward_fix_evidence. Do not deploy, roll back, publish, call providers, mint authority, or create a universal proposal envelope. If deploy_signal is critical/failing and prior_version is supplied, return decision.action rollback, reason error_rate_critical when the signal kind/evidence shows an error-rate critical incident, and set decision.version_target from prior_version only. Seed release_publish_approval with gate_id release.publish.approval, approved true, and the same reason; name release as the downstream skill that owns the actual consequence. If the signal is contradictory, thin, nonfailing, lacks evidence, lacks prior_version for rollback, or lacks tested forward-fix evidence for roll-forward, return a hold decision with escalation.required true, name the missing evidence, set release_publish_approval.approved false, and do not invent targets, tests, signoff, or authority. review_record.form must be review and must cite the supplied signal severity/kind plus the evidence fields used.\n",
+          "output": {
+            "decision": "object",
+            "escalation": "object",
+            "release_publish_approval": "object",
+            "review_record": "object"
+          },
+          "provenance": [],
+          "run_id": "rx_pending",
+          "skill": "judge",
+          "trust_boundary": "native-managed: runx executes the model and tool loop directly, receipts the result, and only yields to a surface for explicit human resolution outside this path"
+        },
+        "id": "agent_task.rollback-judge.output",
+        "source_type": "agent-task",
+        "task": "rollback-judge"
+      },
+      "kind": "agent_act"
+    }
+  ],
+  "run_id": "run_agent_task-rollback-judge-output",
+  "schema": "runx.skill_run.v1",
+  "status": "needs_agent"
+}

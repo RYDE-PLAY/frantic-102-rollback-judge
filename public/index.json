@@ -1,0 +1,14 @@
+{
+  "schema": "frantic.public_index.v1",
+  "bounty": 102,
+  "package": "ryde-play/rollback-judge@sha-daf218f5cd7d",
+  "public_url": "https://runx.ai/x/ryde-play/rollback-judge@sha-daf218f5cd7d",
+  "source_url": "https://github.com/RYDE-PLAY/runx/tree/f805abe0df64968888068e3af2ee1c2d94f93582/skills/rollback-judge",
+  "pr_url": "https://github.com/runxhq/runx/pull/277",
+  "x_yaml": "https://raw.githubusercontent.com/RYDE-PLAY/runx/f805abe0df64968888068e3af2ee1c2d94f93582/skills/rollback-judge/X.yaml",
+  "skill_md": "https://raw.githubusercontent.com/RYDE-PLAY/runx/f805abe0df64968888068e3af2ee1c2d94f93582/skills/rollback-judge/SKILL.md",
+  "evidence_json": "evidence.json",
+  "verification_json": "verification.json",
+  "receipt_ref": "runx:receipt:sha256:0d8487ce947b67ae04d36bdcea199235e86d1a20e2c45db6030ada7e28bb6577",
+  "report": "report.md"
+}

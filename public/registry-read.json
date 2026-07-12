@@ -1,0 +1,50 @@
+{
+  "status": "success",
+  "registry": {
+    "action": "read",
+    "source": "remote",
+    "ref": "ryde-play/rollback-judge@sha-daf218f5cd7d",
+    "skill": {
+      "skill_id": "ryde-play/rollback-judge",
+      "owner": "ryde-play",
+      "name": "rollback-judge",
+      "description": "Judge a deploy signal and produce a bounded rollback, roll-forward, or escalation decision without performing the release action.",
+      "category": "ops",
+      "version": "sha-daf218f5cd7d",
+      "digest": "b6240d8923723e8a07057dd678104dfecab87594695e5e49d0ed4a0ca53e560e",
+      "markdown": "---\nname: rollback-judge\ndescription: Judge a deploy signal and produce a bounded rollback, roll-forward, or escalation decision without performing the release action.\nrunx:\n  category: ops\n---\n\n# Rollback Judge\n\nRollback Judge is a thin review skill for deploy incidents. It reads a supplied\ndeploy signal, current version, prior version, and any forward-fix evidence,\nthen emits one decision packet for a downstream release lane.\n\nThe skill does not deploy, roll back, publish, mint authority, or call provider\nAPIs. Its only job is to record a review decision from caller-supplied evidence\nand, when rollback is justified, shape that decision as the agent answer for the\nexisting `release.publish.approval` gate.\n\n## What This Skill Does\n\n1. **Read the deploy signal.** Use only `deploy_signal.severity`,\n   `deploy_signal.kind`, and `deploy_signal.evidence` supplied by the caller.\n2. **Check rollback eligibility.** A rollback decision requires a failing deploy\n   signal and a concrete `prior_version`.\n3. **Check roll-forward eligibility.** A roll-forward decision requires complete\n   `forward_fix_evidence.test_runs` and `forward_fix_evidence.review_signoff`.\n4. **Emit a review packet.** The packet contains `decision`, `escalation`,\n   `release_publish_approval`, and `review_record`.\n5. **Hand off by naming.** The packet names the downstream `release` skill and\n   the `release.publish.approval` gate. The release graph owns the actual\n   publish, rollback, or deployment consequence.\n\n## Contract Boundaries\n\n- **Typed inputs are required.**\n  - `deploy_signal`: `{ severity, kind, evidence }`\n  - `current_version`: deployed version being judged.\n  - `prior_version`: rollback target candidate.\n  - `forward_fix_evidence`: `{ test_runs, review_signoff }`\n- **Typed output is bounded.**\n  - `decision`: `{ action, reason, version_target }`\n  - `escalation`: why the judge stopped instead of approving a release action.\n- **No invented facts.** The judge never invents a prior version, fix evidence,\n  test results, or review signoff.\n- **No universal proposal envelope.** The output is a single review decision\n  over supplied evidence, not a general action proposal or authority grant.\n- **No minted authority.** Approval data is an agent answer for\n  `release.publish.approval`; it is not a deployment credential or capability.\n\n## Decision Rules\n\n- Return rollback only when the deploy signal is failing or critical and the\n  prior version is supplied.\n- Return roll-forward only when the deploy signal is failing and the supplied\n  fix evidence includes passing test runs plus review signoff.\n- Return escalation when the signal is contradictory, thin, nonfailing, missing\n  evidence, or when neither rollback nor roll-forward has enough supplied proof.\n- Refuse rollback without a failing deploy signal.\n- Refuse roll-forward with incomplete or untested fix evidence.\n- Never target a version that was not supplied in `prior_version`,\n  `current_version`, or `forward_fix_evidence`.\n\n## Output Schema\n\n```yaml\ndecision:\n  action: rollback | roll_forward | hold\n  reason: string\n  version_target: object | null\nescalation:\n  required: boolean\n  reason: string | null\n  missing_evidence:\n    - string\nrelease_publish_approval:\n  gate_id: release.publish.approval\n  approved: boolean\n  reason: string\n  dispatch:\n    skill: release\n    answer_key: release.publish.approval\nreview_record:\n  form: review\n  signal:\n    severity: string\n    kind: string\n  evidence_used:\n    - string\n  refused:\n    reason: string | null\n```\n\n## Inputs\n\n- `deploy_signal` (required): caller-supplied deploy health or incident signal.\n- `current_version` (required): current deployed version metadata.\n- `prior_version` (optional): supplied candidate rollback target.\n- `forward_fix_evidence` (optional): supplied fix, test, and review evidence.",
+      "profile_digest": "e1080cba9ca05a1917ad14be5b5f4ea2ad5f91db95d3cfb1e1d5e314fd4759e8",
+      "runner_names": [
+        "judge"
+      ],
+      "source_type": "agent",
+      "trust_tier": "community",
+      "required_scopes": [],
+      "tags": [],
+      "publisher": {
+        "kind": "user",
+        "id": "user_0e65bd23969ab1dea100a77c",
+        "handle": "ryde-play",
+        "display_name": "RYDE"
+      },
+      "attestations": [
+        {
+          "kind": "publisher",
+          "id": "publisher:user_0e65bd23969ab1dea100a77c",
+          "status": "declared",
+          "summary": "RYDE",
+          "issued_at": "2026-07-12T04:14:11.704Z",
+          "metadata": {
+            "publisher_display_name": "RYDE",
+            "publisher_handle": "ryde-play",
+            "publisher_id": "user_0e65bd23969ab1dea100a77c",
+            "publisher_kind": "user",
+            "trust_tier": "community"
+          }
+        }
+      ],
+      "install_command": "runx add ryde-play/rollback-judge@sha-daf218f5cd7d --registry https://api.runx.ai",
+      "run_command": "runx skill ryde-play/rollback-judge@sha-daf218f5cd7d --registry https://api.runx.ai"
+    }
+  }
+}
