@@ -4,15 +4,15 @@ Published package: ryde-play/rollback-judge@sha-daf218f5cd7d
 
 Public URL: https://runx.ai/x/ryde-play/rollback-judge@sha-daf218f5cd7d
 
-Source: https://github.com/RYDE-PLAY/runx/tree/f805abe0df64968888068e3af2ee1c2d94f93582/skills/rollback-judge
+Source: https://github.com/RYDE-PLAY/runx/tree/0bac7312efb03b955f519bb828cd1efb4da6e4a6/skills/rollback-judge
 
 PR: https://github.com/runxhq/runx/pull/277
 
 Raw files:
 
-- X.yaml: https://raw.githubusercontent.com/RYDE-PLAY/runx/f805abe0df64968888068e3af2ee1c2d94f93582/skills/rollback-judge/X.yaml
-- SKILL.md: https://raw.githubusercontent.com/RYDE-PLAY/runx/f805abe0df64968888068e3af2ee1c2d94f93582/skills/rollback-judge/SKILL.md
-- Harness evidence: https://raw.githubusercontent.com/RYDE-PLAY/runx/f805abe0df64968888068e3af2ee1c2d94f93582/skills/rollback-judge/harness-evidence.json
+- X.yaml: https://raw.githubusercontent.com/RYDE-PLAY/runx/0bac7312efb03b955f519bb828cd1efb4da6e4a6/skills/rollback-judge/X.yaml
+- SKILL.md: https://raw.githubusercontent.com/RYDE-PLAY/runx/0bac7312efb03b955f519bb828cd1efb4da6e4a6/skills/rollback-judge/SKILL.md
+- Harness evidence: https://raw.githubusercontent.com/RYDE-PLAY/runx/0bac7312efb03b955f519bb828cd1efb4da6e4a6/skills/rollback-judge/harness-evidence.json
 
 ## Verification
 
