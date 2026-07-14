@@ -3,40 +3,42 @@
   "registry": {
     "action": "install",
     "source": "remote",
-    "ref": "ryde-play/rollback-judge@sha-c78cb2af1e56",
+    "ref": "ryde-play/rollback-judge@sha-9c10d9cc79c2",
     "install": {
       "status": "installed",
-      "destination": "/Volumes/SN770/娱乐/Grinder/runx-fork/skills/ryde-play/rollback-judge/sha-c78cb2af1e56/SKILL.md",
+      "destination": "/Volumes/SN770/娱乐/Grinder/runx-fork/skills/ryde-play/rollback-judge/sha-9c10d9cc79c2/SKILL.md",
       "skill_name": "rollback-judge",
       "source": "runx-registry",
       "source_label": "runx registry",
       "skill_id": "ryde-play/rollback-judge",
-      "version": "sha-c78cb2af1e56",
-      "digest": "sha256:5ae63ce29dc69068a9ad8074006a672e8d90611a65b3fe88315c8052ef4842bc",
-      "profile_digest": "sha256:dac53cdc3031b4d3c97251bd94e7b836229151e3d72008f1bb6b8a8e20fc8537",
-      "profile_state_path": "/Volumes/SN770/娱乐/Grinder/runx-fork/skills/ryde-play/rollback-judge/sha-c78cb2af1e56/.runx/profile.json",
+      "version": "sha-9c10d9cc79c2",
+      "digest": "sha256:2a1591198f0904cd56fb6a02f3fb57f68a859713a1cdf730ff9ffc12580658bc",
+      "profile_digest": "sha256:049484f5783962c1cd49ff42b138b991c76ec204e08de7962aa97b9155fd1737",
+      "profile_state_path": "/Volumes/SN770/娱乐/Grinder/runx-fork/skills/ryde-play/rollback-judge/sha-9c10d9cc79c2/.runx/profile.json",
       "runner_names": [
+        "agent_review",
         "judge"
       ],
       "trust_tier": "community"
     },
     "receipt_metadata": {
-      "destination": "/Volumes/SN770/娱乐/Grinder/runx-fork/skills/ryde-play/rollback-judge/sha-c78cb2af1e56/SKILL.md",
-      "digest": "sha256:5ae63ce29dc69068a9ad8074006a672e8d90611a65b3fe88315c8052ef4842bc",
+      "destination": "/Volumes/SN770/娱乐/Grinder/runx-fork/skills/ryde-play/rollback-judge/sha-9c10d9cc79c2/SKILL.md",
+      "digest": "sha256:2a1591198f0904cd56fb6a02f3fb57f68a859713a1cdf730ff9ffc12580658bc",
       "install_count": 1,
-      "profile_digest": "sha256:dac53cdc3031b4d3c97251bd94e7b836229151e3d72008f1bb6b8a8e20fc8537",
+      "package_digest": "06b462cc5854a12683e6fb96ed85ce93931517fc3d18ce7e1f79f4f0e188c979",
+      "profile_digest": "sha256:049484f5783962c1cd49ff42b138b991c76ec204e08de7962aa97b9155fd1737",
       "publisher": {
         "display_name": "RYDE",
         "handle": "ryde-play",
         "id": "user_0e65bd23969ab1dea100a77c",
         "kind": "user"
       },
-      "ref": "ryde-play/rollback-judge@sha-c78cb2af1e56",
+      "ref": "ryde-play/rollback-judge@sha-9c10d9cc79c2",
       "skill_id": "ryde-play/rollback-judge",
       "source_label": "runx registry",
       "status": "installed",
       "trust_tier": "community",
-      "version": "sha-c78cb2af1e56"
+      "version": "sha-9c10d9cc79c2"
     }
   }
 }

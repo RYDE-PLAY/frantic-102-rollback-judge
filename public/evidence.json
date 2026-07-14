@@ -1,70 +1,64 @@
 {
   "schema": "frantic.evidence.v1",
   "bounty": 102,
-  "revision_for": "frantic:judgment:d49b52e7-dd4e-401e-9a11-127a8938b301",
+  "revision_for": "frantic:judgment:78265825-2d42-4315-b930-54e3ff26f144",
   "package": {
     "owner": "ryde-play",
     "name": "rollback-judge",
-    "version": "sha-c78cb2af1e56",
-    "registry_ref": "ryde-play/rollback-judge@sha-c78cb2af1e56",
-    "public_url": "https://runx.ai/x/ryde-play/rollback-judge@sha-c78cb2af1e56",
-    "source_url": "https://github.com/RYDE-PLAY/runx/tree/a3ca02e25bb77a27a83ba65cea02d25274fb767f/skills/rollback-judge",
+    "version": "sha-9c10d9cc79c2",
+    "registry_ref": "ryde-play/rollback-judge@sha-9c10d9cc79c2",
+    "public_url": "https://runx.ai/x/ryde-play/rollback-judge@sha-9c10d9cc79c2",
+    "source_url": "https://github.com/RYDE-PLAY/runx/tree/1d6ebc7607aab780db2d71293beec9c2ca15be5d/skills/rollback-judge",
     "pr_url": "https://github.com/runxhq/runx/pull/277",
-    "x_yaml": "https://raw.githubusercontent.com/RYDE-PLAY/runx/a3ca02e25bb77a27a83ba65cea02d25274fb767f/skills/rollback-judge/X.yaml",
-    "skill_md": "https://raw.githubusercontent.com/RYDE-PLAY/runx/a3ca02e25bb77a27a83ba65cea02d25274fb767f/skills/rollback-judge/SKILL.md",
-    "harness_evidence": "https://raw.githubusercontent.com/RYDE-PLAY/runx/a3ca02e25bb77a27a83ba65cea02d25274fb767f/skills/rollback-judge/harness-evidence.json",
-    "source_commit": "a3ca02e25bb77a27a83ba65cea02d25274fb767f",
+    "x_yaml": "https://raw.githubusercontent.com/RYDE-PLAY/runx/1d6ebc7607aab780db2d71293beec9c2ca15be5d/skills/rollback-judge/X.yaml",
+    "skill_md": "https://raw.githubusercontent.com/RYDE-PLAY/runx/1d6ebc7607aab780db2d71293beec9c2ca15be5d/skills/rollback-judge/SKILL.md",
+    "harness_evidence": "https://raw.githubusercontent.com/RYDE-PLAY/runx/1d6ebc7607aab780db2d71293beec9c2ca15be5d/skills/rollback-judge/harness-evidence.json",
+    "source_commit": "1d6ebc7607aab780db2d71293beec9c2ca15be5d",
     "publish_method": "runx registry publish ./skills/rollback-judge/SKILL.md --registry https://api.runx.ai",
-    "publisher": {
-      "display_name": "RYDE",
-      "handle": "ryde-play",
-      "id": "user_0e65bd23969ab1dea100a77c",
-      "kind": "user"
-    },
-    "registry_digest": "5ae63ce29dc69068a9ad8074006a672e8d90611a65b3fe88315c8052ef4842bc",
-    "profile_digest": "dac53cdc3031b4d3c97251bd94e7b836229151e3d72008f1bb6b8a8e20fc8537"
+    "publisher": null,
+    "registry_digest": "null",
+    "profile_digest": "null"
   },
   "observations": [
-    "runx --version returned runx-cli 0.6.14 for the registry publish/read/add/harness flow; patched PR source also builds and passes pnpm verify:fast for the resume input preservation fix.",
-    "Verified GitHub account RYDE-PLAY/ryde-play is the claimant identity and stars runxhq/runx.",
-    "Package name is exactly rollback-judge and registry ref is ryde-play/rollback-judge@sha-c78cb2af1e56.",
-    "Registry public URL is https://runx.ai/x/ryde-play/rollback-judge@sha-c78cb2af1e56; registry read resolved digest sha256:5ae63ce29dc69068a9ad8074006a672e8d90611a65b3fe88315c8052ef4842bc and profile digest sha256:dac53cdc3031b4d3c97251bd94e7b836229151e3d72008f1bb6b8a8e20fc8537.",
-    "Clean install with runx add ryde-play/rollback-judge@sha-c78cb2af1e56 --registry https://api.runx.ai succeeded.",
+    "runx-cli 0.6.14 was used for publish, registry read, install, hosted harness, dogfood, and verify.",
+    "GitHub identity RYDE-PLAY/ryde-play was verified before publishing and pushing the PR branch.",
+    "Package name is exactly rollback-judge and registry ref is ryde-play/rollback-judge@sha-9c10d9cc79c2.",
+    "Default judge runner is now a one-step graph that seals a review domain act in one run; it does not depend on runx resume preserving inputs.",
+    "The inline harness still uses agent_review for the required cases: critical-signal-rollback seals and signal-contradictory-block returns needs_agent with no seeded approval.",
+    "Clean install with runx add ryde-play/rollback-judge@sha-9c10d9cc79c2 --registry https://api.runx.ai succeeded.",
     "Local harness passed 2 cases: critical-signal-rollback, signal-contradictory-block.",
     "Hosted-installed harness passed 2 cases: critical-signal-rollback, signal-contradictory-block.",
-    "Harness case critical-signal-rollback seeds act_decision=approve and act_target_ref=runx:release:checkout@2026.07.12.2, then seals a rollback review decision.",
-    "Harness case signal-contradictory-block omits caller.answers and returns needs_agent, so no decision is sealed and no release approval is seeded.",
-    "Dogfood initial run returned needs_agent and its request envelope included act_decision=approve plus act_target_ref=runx:release:checkout@2026.07.12.2.",
-    "Dogfood output used deploy_signal severity=critical, kind=error_rate_spike, action=rollback, reason=error_rate_critical, version_target=2026.07.12.2.",
-    "Dogfood receipt runx:receipt:sha256:5e3bd02d3ad36ec4a51fbde4eeb58a3cc628b866cb5f09b3fc2fd2bdfed704ce records act_judge form=review with summary \"action=rollback reason=error_rate_critical target=2026.07.12.2\".",
-    "Dogfood receipt act target_refs includes runx:release:checkout@2026.07.12.2 and decision.inputs.target_ref is runx:release:checkout@2026.07.12.2.",
-    "The sealed receipt therefore records action=rollback, reason=error_rate_critical, and judged release target 2026.07.12.2 in receipt bytes, directly addressing the human revision note.",
-    "runx verify returned valid=true, signature.status=valid, signature.mode=production.",
+    "Dogfood used the post-publish registry package and the default judge graph runner with critical severity=critical kind=error_rate_spike.",
+    "Dogfood output decision.action=rollback, reason=error_rate_critical, version_target.version=2026.07.12.2, and release_publish_approval.approved=true.",
+    "Dogfood receipt act form=review with summary action=rollback reason=error_rate_critical target=2026.07.12.2.",
+    "Dogfood receipt act target_refs includes runx:release:checkout@2026.07.12.2.",
+    "Dogfood receipt decision choice=close and decision.inputs.target_ref is runx:release:checkout@2026.07.12.2.",
+    "runx verify returned valid=true, signature.status=valid, and signature.mode=production.",
     "The verification public key is published; the private signing seed is not included in artifacts."
   ],
   "commands": {
     "version": "runx --version",
     "publish": "runx registry publish ./skills/rollback-judge/SKILL.md --registry https://api.runx.ai --json",
-    "registry_read": "runx registry read ryde-play/rollback-judge@sha-c78cb2af1e56 --registry https://api.runx.ai --json",
-    "install": "runx add ryde-play/rollback-judge@sha-c78cb2af1e56 --registry https://api.runx.ai --json",
+    "registry_read": "runx registry read ryde-play/rollback-judge@sha-9c10d9cc79c2 --registry https://api.runx.ai --json",
+    "install": "runx add ryde-play/rollback-judge@sha-9c10d9cc79c2 --registry https://api.runx.ai --json",
     "local_harness": "runx harness ./skills/rollback-judge --json",
-    "hosted_installed_harness": "runx harness ./skills/ryde-play/rollback-judge/sha-c78cb2af1e56 --json",
-    "dogfood": "runx skill ryde-play/rollback-judge@sha-c78cb2af1e56 --registry https://api.runx.ai --json --input-json deploy_signal=<fixtures/critical-signal.deploy_signal> --input-json current_version=<fixtures/critical-signal.current_version> --input-json prior_version=<fixtures/critical-signal.prior_version> --input-json forward_fix_evidence=<fixtures/critical-signal.forward_fix_evidence> --input act_decision=approve --input act_target_ref=runx:release:checkout@2026.07.12.2; runx resume run_agent_task-rollback-judge-output /tmp/rollback-judge-answer.json --json",
+    "hosted_installed_harness": "runx harness ./skills/ryde-play/rollback-judge/sha-9c10d9cc79c2 --json",
+    "dogfood": "runx skill ryde-play/rollback-judge@sha-9c10d9cc79c2 --registry https://api.runx.ai --json --input-json deploy_signal=<fixtures/critical-signal.deploy_signal> --input-json current_version=<fixtures/critical-signal.current_version> --input-json prior_version=<fixtures/critical-signal.prior_version> --input-json forward_fix_evidence=<fixtures/critical-signal.forward_fix_evidence> --input act_decision=approve --input act_target_ref=runx:release:checkout@2026.07.12.2",
     "verify": "RUNX_RECEIPT_VERIFY_KID=<kid> RUNX_RECEIPT_VERIFY_ED25519_PUBLIC_KEY_BASE64=<public_key_base64> runx verify --receipt runx-receipt.json --json"
   },
   "dogfood": {
-    "package": "ryde-play/rollback-judge@sha-c78cb2af1e56",
+    "package": "ryde-play/rollback-judge@sha-9c10d9cc79c2",
     "input": "skills/rollback-judge/fixtures/critical-signal.json",
-    "command": "runx skill ryde-play/rollback-judge@sha-c78cb2af1e56 --registry https://api.runx.ai --json --input-json deploy_signal=<fixtures/critical-signal.deploy_signal> --input-json current_version=<fixtures/critical-signal.current_version> --input-json prior_version=<fixtures/critical-signal.prior_version> --input-json forward_fix_evidence=<fixtures/critical-signal.forward_fix_evidence> --input act_decision=approve --input act_target_ref=runx:release:checkout@2026.07.12.2; runx resume run_agent_task-rollback-judge-output /tmp/rollback-judge-answer.json --json",
-    "receipt_ref": "runx:receipt:sha256:5e3bd02d3ad36ec4a51fbde4eeb58a3cc628b866cb5f09b3fc2fd2bdfed704ce",
-    "receipt_id": "sha256:5e3bd02d3ad36ec4a51fbde4eeb58a3cc628b866cb5f09b3fc2fd2bdfed704ce",
+    "command": "runx skill ryde-play/rollback-judge@sha-9c10d9cc79c2 --registry https://api.runx.ai --json --input-json deploy_signal=<fixtures/critical-signal.deploy_signal> --input-json current_version=<fixtures/critical-signal.current_version> --input-json prior_version=<fixtures/critical-signal.prior_version> --input-json forward_fix_evidence=<fixtures/critical-signal.forward_fix_evidence> --input act_decision=approve --input act_target_ref=runx:release:checkout@2026.07.12.2",
+    "receipt_ref": "runx:receipt:sha256:7cdf335e3d940dede2ce5c469426f714bb3ccfb249a116fc18304b4ab23f9044",
+    "receipt_id": "sha256:7cdf335e3d940dede2ce5c469426f714bb3ccfb249a116fc18304b4ab23f9044",
     "status": "sealed",
     "verify_verdict": {
       "valid": true,
       "signature": {
         "mode": "production",
         "status": "valid",
-        "kid": "rollback-judge-20260714-revision-v2"
+        "kid": "rollback-judge-20260714-graph-v1"
       },
       "findings": []
     },
@@ -121,7 +115,7 @@
       }
     },
     "receipt_act": {
-      "id": "act_judge",
+      "id": "act_turn",
       "form": "review",
       "summary": "action=rollback reason=error_rate_critical target=2026.07.12.2",
       "target_refs": [
@@ -131,34 +125,33 @@
         }
       ],
       "closure": {
+        "closed_at": "2026-07-14T05:18:29.172Z",
         "disposition": "closed",
         "reason_code": "agent_act_closed",
-        "summary": "action=rollback reason=error_rate_critical target=2026.07.12.2",
-        "closed_at": "2026-07-14T04:42:48.366Z"
+        "summary": "action=rollback reason=error_rate_critical target=2026.07.12.2"
       }
     },
     "receipt_decision": {
-      "id": "dec_judge",
+      "id": "dec_turn",
       "choice": "close",
       "target_ref": {
         "type": "tracking_item",
         "uri": "runx:release:checkout@2026.07.12.2"
       },
       "justification": {
-        "summary": "action=rollback reason=error_rate_critical target=2026.07.12.2",
-        "evidence_refs": []
+        "evidence_refs": [],
+        "summary": "action=rollback reason=error_rate_critical target=2026.07.12.2"
       }
     },
     "registry_provenance": {
-      "digest": "sha256:5ae63ce29dc69068a9ad8074006a672e8d90611a65b3fe88315c8052ef4842bc",
-      "profile_digest": "sha256:dac53cdc3031b4d3c97251bd94e7b836229151e3d72008f1bb6b8a8e20fc8537",
-      "registry_key_id": "runx-registry-ed25519-v1",
+      "digest": "sha256:null",
+      "profile_digest": "sha256:null",
+      "registry_key_id": null,
       "registry_source": "remote https://api.runx.ai",
-      "registry_source_fingerprint": "ba1ac16b631195fd",
       "skill_id": "ryde-play/rollback-judge",
       "trust_state": "trusted",
-      "trust_tier": "community",
-      "version": "sha-c78cb2af1e56"
+      "trust_tier": null,
+      "version": "sha-9c10d9cc79c2"
     }
   },
   "artifacts": {
@@ -167,11 +160,10 @@
     "runx_add": "runx-add.json",
     "local_harness": "local-harness.json",
     "hosted_installed_harness": "hosted-installed-harness.json",
-    "registry_initial_needs_agent": "registry-initial-needs-agent.json",
     "registry_dogfood": "registry-dogfood.json",
     "runx_receipt": "runx-receipt.json",
     "runx_verify": "runx-verify.json",
     "verification_key": "verification-key.json"
   },
-  "summary": "Revision publishes ryde-play/rollback-judge@sha-c78cb2af1e56 with act bindings and a patched resume path so the sealed dogfood receipt records action=rollback, reason=error_rate_critical, and target runx:release:checkout@2026.07.12.2 in act and decision fields."
+  "summary": "Revision publishes ryde-play/rollback-judge@sha-9c10d9cc79c2 with a default one-pass review graph so stock runx-cli 0.6.14 seals a receipt recording action=rollback, reason=error_rate_critical, and target runx:release:checkout@2026.07.12.2 in act and decision fields."
 }

@@ -1,5 +1,5 @@
 {
-  "kid": "rollback-judge-20260714-revision-v2",
-  "public_key_base64": "I2p5N5MDAihCE8lrJykkQe2zz1F1onjYn1PID00Hstw=",
-  "note": "Public verification key for the rollback-judge revision dogfood receipt; private seed is intentionally not published."
+  "kid": "rollback-judge-20260714-graph-v1",
+  "public_key_base64": "J/yiMnEA/0Ye3yhEqvG2950DaFMKhmY0DIwgiSuLgqA=",
+  "note": "Public verification key for the rollback-judge graph dogfood receipt; private seed is intentionally not published."
 }

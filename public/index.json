@@ -1,14 +1,19 @@
 {
-  "schema": "frantic.public_index.v1",
-  "bounty": 102,
-  "package": "ryde-play/rollback-judge@sha-c78cb2af1e56",
-  "public_url": "https://runx.ai/x/ryde-play/rollback-judge@sha-c78cb2af1e56",
-  "source_url": "https://github.com/RYDE-PLAY/runx/tree/a3ca02e25bb77a27a83ba65cea02d25274fb767f/skills/rollback-judge",
-  "pr_url": "https://github.com/runxhq/runx/pull/277",
-  "x_yaml": "https://raw.githubusercontent.com/RYDE-PLAY/runx/a3ca02e25bb77a27a83ba65cea02d25274fb767f/skills/rollback-judge/X.yaml",
-  "skill_md": "https://raw.githubusercontent.com/RYDE-PLAY/runx/a3ca02e25bb77a27a83ba65cea02d25274fb767f/skills/rollback-judge/SKILL.md",
-  "evidence_json": "evidence.json",
-  "verification_json": "verification.json",
-  "receipt_ref": "runx:receipt:sha256:5e3bd02d3ad36ec4a51fbde4eeb58a3cc628b866cb5f09b3fc2fd2bdfed704ce",
-  "report": "report.md"
+  "schema": "frantic.artifact_index.v1",
+  "package": "ryde-play/rollback-judge@sha-9c10d9cc79c2",
+  "receipt_ref": "runx:receipt:sha256:7cdf335e3d940dede2ce5c469426f714bb3ccfb249a116fc18304b4ab23f9044",
+  "files": [
+    "evidence.json",
+    "verification.json",
+    "report.md",
+    "publish.json",
+    "registry-read.json",
+    "runx-add.json",
+    "local-harness.json",
+    "hosted-installed-harness.json",
+    "registry-dogfood.json",
+    "runx-receipt.json",
+    "runx-verify.json",
+    "verification-key.json"
+  ]
 }
