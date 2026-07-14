@@ -4,16 +4,16 @@
     "action": "publish",
     "publish": {
       "target": "hosted",
-      "status": "unchanged",
+      "status": "published",
       "skill_id": "ryde-play/rollback-judge",
       "owner": "ryde-play",
       "name": "rollback-judge",
-      "version": "sha-daf218f5cd7d",
-      "digest": "b6240d8923723e8a07057dd678104dfecab87594695e5e49d0ed4a0ca53e560e",
-      "profile_digest": "e1080cba9ca05a1917ad14be5b5f4ea2ad5f91db95d3cfb1e1d5e314fd4759e8",
+      "version": "sha-c78cb2af1e56",
+      "digest": "5ae63ce29dc69068a9ad8074006a672e8d90611a65b3fe88315c8052ef4842bc",
+      "profile_digest": "dac53cdc3031b4d3c97251bd94e7b836229151e3d72008f1bb6b8a8e20fc8537",
       "trust_tier": "community",
-      "install_command": "runx add ryde-play/rollback-judge@sha-daf218f5cd7d --registry https://api.runx.ai",
-      "run_command": "runx skill ryde-play/rollback-judge@sha-daf218f5cd7d --registry https://api.runx.ai",
+      "install_command": "runx add ryde-play/rollback-judge@sha-c78cb2af1e56 --registry https://api.runx.ai",
+      "run_command": "runx skill ryde-play/rollback-judge@sha-c78cb2af1e56 --registry https://api.runx.ai",
       "public_url": "https://runx.ai/x/ryde-play/rollback-judge"
     }
   }

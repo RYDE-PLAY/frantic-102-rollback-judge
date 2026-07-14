@@ -1,14 +1,14 @@
 {
   "registry_provenance": {
-    "digest": "sha256:b6240d8923723e8a07057dd678104dfecab87594695e5e49d0ed4a0ca53e560e",
-    "profile_digest": "sha256:e1080cba9ca05a1917ad14be5b5f4ea2ad5f91db95d3cfb1e1d5e314fd4759e8",
+    "digest": "sha256:5ae63ce29dc69068a9ad8074006a672e8d90611a65b3fe88315c8052ef4842bc",
+    "profile_digest": "sha256:dac53cdc3031b4d3c97251bd94e7b836229151e3d72008f1bb6b8a8e20fc8537",
     "registry_key_id": "runx-registry-ed25519-v1",
     "registry_source": "remote https://api.runx.ai",
     "registry_source_fingerprint": "ba1ac16b631195fd",
     "skill_id": "ryde-play/rollback-judge",
     "trust_state": "trusted",
     "trust_tier": "community",
-    "version": "sha-daf218f5cd7d"
+    "version": "sha-c78cb2af1e56"
   },
   "requests": [
     {
@@ -19,10 +19,12 @@
           "allowed_tools": [],
           "current_context": [],
           "execution_location": {
-            "skill_directory": "/Users/ryde/.runx/registry-skills/ba1ac16b631195fd/ryde-play/rollback-judge/sha-daf218f5cd7d/a3f693f21e115206/ryde-play/rollback-judge/sha-daf218f5cd7d"
+            "skill_directory": "/Users/ryde/.runx/registry-skills/ba1ac16b631195fd/ryde-play/rollback-judge/sha-c78cb2af1e56/824ee738cf33d6be/ryde-play/rollback-judge/sha-c78cb2af1e56"
           },
           "historical_context": [],
           "inputs": {
+            "act_decision": "approve",
+            "act_target_ref": "runx:release:checkout@2026.07.12.2",
             "current_version": {
               "deployed_at": "2026-07-12T03:05:00Z",
               "digest": "sha256:current-checkout-20260712-3",
@@ -51,8 +53,9 @@
               "version": "2026.07.12.2"
             }
           },
-          "instructions": "Produce exactly one review decision from the supplied deploy_signal, current_version, prior_version, and forward_fix_evidence. Do not deploy, roll back, publish, call providers, mint authority, or create a universal proposal envelope. If deploy_signal is critical/failing and prior_version is supplied, return decision.action rollback, reason error_rate_critical when the signal kind/evidence shows an error-rate critical incident, and set decision.version_target from prior_version only. Seed release_publish_approval with gate_id release.publish.approval, approved true, and the same reason; name release as the downstream skill that owns the actual consequence. If the signal is contradictory, thin, nonfailing, lacks evidence, lacks prior_version for rollback, or lacks tested forward-fix evidence for roll-forward, return a hold decision with escalation.required true, name the missing evidence, set release_publish_approval.approved false, and do not invent targets, tests, signoff, or authority. review_record.form must be review and must cite the supplied signal severity/kind plus the evidence fields used.\n",
+          "instructions": "Produce exactly one review decision from the supplied deploy_signal, current_version, prior_version, and forward_fix_evidence. Do not deploy, roll back, publish, call providers, mint authority, or create a universal proposal envelope. If deploy_signal is critical/failing and prior_version is supplied, return decision.action rollback, reason error_rate_critical when the signal kind/evidence shows an error-rate critical incident, and set decision.version_target from prior_version only. Also set act_reason to a concise audit string that includes the decision action, reason, and target version, for example \"action=rollback reason=error_rate_critical target=2026.07.12.2\". Seed release_publish_approval with gate_id release.publish.approval, approved true, and the same reason; name release as the downstream skill that owns the actual consequence. If the signal is contradictory, thin, nonfailing, lacks evidence, lacks prior_version for rollback, or lacks tested forward-fix evidence for roll-forward, return a hold decision with escalation.required true, name the missing evidence, set release_publish_approval.approved false, and do not invent targets, tests, signoff, or authority. For a hold or escalation, set act_reason to include hold plus the refusal reason. review_record.form must be review and must cite the supplied signal severity/kind plus the evidence fields used.\n",
           "output": {
+            "act_reason": "string",
             "decision": "object",
             "escalation": "object",
             "release_publish_approval": "object",

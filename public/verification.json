@@ -1,38 +1,39 @@
 {
   "schema": "frantic.verification.v1",
   "bounty": 102,
-  "package": "ryde-play/rollback-judge@sha-daf218f5cd7d",
-  "public_url": "https://runx.ai/x/ryde-play/rollback-judge@sha-daf218f5cd7d",
-  "source_url": "https://github.com/RYDE-PLAY/runx/tree/0bac7312efb03b955f519bb828cd1efb4da6e4a6/skills/rollback-judge",
+  "package": "ryde-play/rollback-judge@sha-c78cb2af1e56",
+  "public_url": "https://runx.ai/x/ryde-play/rollback-judge@sha-c78cb2af1e56",
+  "source_url": "https://github.com/RYDE-PLAY/runx/tree/a3ca02e25bb77a27a83ba65cea02d25274fb767f/skills/rollback-judge",
   "pr_url": "https://github.com/runxhq/runx/pull/277",
-  "x_yaml": "https://raw.githubusercontent.com/RYDE-PLAY/runx/0bac7312efb03b955f519bb828cd1efb4da6e4a6/skills/rollback-judge/X.yaml",
-  "skill_md": "https://raw.githubusercontent.com/RYDE-PLAY/runx/0bac7312efb03b955f519bb828cd1efb4da6e4a6/skills/rollback-judge/SKILL.md",
-  "harness_evidence": "https://raw.githubusercontent.com/RYDE-PLAY/runx/0bac7312efb03b955f519bb828cd1efb4da6e4a6/skills/rollback-judge/harness-evidence.json",
-  "receipt_ref": "runx:receipt:sha256:0d8487ce947b67ae04d36bdcea199235e86d1a20e2c45db6030ada7e28bb6577",
+  "x_yaml": "https://raw.githubusercontent.com/RYDE-PLAY/runx/a3ca02e25bb77a27a83ba65cea02d25274fb767f/skills/rollback-judge/X.yaml",
+  "skill_md": "https://raw.githubusercontent.com/RYDE-PLAY/runx/a3ca02e25bb77a27a83ba65cea02d25274fb767f/skills/rollback-judge/SKILL.md",
+  "harness_evidence": "https://raw.githubusercontent.com/RYDE-PLAY/runx/a3ca02e25bb77a27a83ba65cea02d25274fb767f/skills/rollback-judge/harness-evidence.json",
+  "receipt_ref": "runx:receipt:sha256:5e3bd02d3ad36ec4a51fbde4eeb58a3cc628b866cb5f09b3fc2fd2bdfed704ce",
   "runx_cli_version": "runx-cli 0.6.14",
+  "revision_note": "Human review requested receipt-level proof of the judgment; this packet verifies act summary, act target_refs, and decision target_ref.",
   "registry_read": {
     "status": "success",
     "skill_id": "ryde-play/rollback-judge",
     "owner": "ryde-play",
     "name": "rollback-judge",
-    "version": "sha-daf218f5cd7d",
-    "digest": "b6240d8923723e8a07057dd678104dfecab87594695e5e49d0ed4a0ca53e560e",
-    "profile_digest": "e1080cba9ca05a1917ad14be5b5f4ea2ad5f91db95d3cfb1e1d5e314fd4759e8",
+    "version": "sha-c78cb2af1e56",
+    "digest": "5ae63ce29dc69068a9ad8074006a672e8d90611a65b3fe88315c8052ef4842bc",
+    "profile_digest": "dac53cdc3031b4d3c97251bd94e7b836229151e3d72008f1bb6b8a8e20fc8537",
     "runner_names": [
       "judge"
     ]
   },
   "install": {
     "status": "installed",
-    "destination": "/Volumes/SN770/娱乐/Grinder/runx-fork/skills/ryde-play/rollback-judge/sha-daf218f5cd7d/SKILL.md",
+    "destination": "/Volumes/SN770/娱乐/Grinder/runx-fork/skills/ryde-play/rollback-judge/sha-c78cb2af1e56/SKILL.md",
     "skill_name": "rollback-judge",
     "source": "runx-registry",
     "source_label": "runx registry",
     "skill_id": "ryde-play/rollback-judge",
-    "version": "sha-daf218f5cd7d",
-    "digest": "sha256:b6240d8923723e8a07057dd678104dfecab87594695e5e49d0ed4a0ca53e560e",
-    "profile_digest": "sha256:e1080cba9ca05a1917ad14be5b5f4ea2ad5f91db95d3cfb1e1d5e314fd4759e8",
-    "profile_state_path": "/Volumes/SN770/娱乐/Grinder/runx-fork/skills/ryde-play/rollback-judge/sha-daf218f5cd7d/.runx/profile.json",
+    "version": "sha-c78cb2af1e56",
+    "digest": "sha256:5ae63ce29dc69068a9ad8074006a672e8d90611a65b3fe88315c8052ef4842bc",
+    "profile_digest": "sha256:dac53cdc3031b4d3c97251bd94e7b836229151e3d72008f1bb6b8a8e20fc8537",
+    "profile_state_path": "/Volumes/SN770/娱乐/Grinder/runx-fork/skills/ryde-play/rollback-judge/sha-c78cb2af1e56/.runx/profile.json",
     "runner_names": [
       "judge"
     ],
@@ -48,7 +49,7 @@
       "signal-contradictory-block"
     ],
     "receipt_ids": [
-      "sha256:36e52ab16ed14c5e7edc3177b400195d66e5e6c6ca52c87d27f387c9c5bf7a71"
+      "sha256:7161080fe63a37a2c6266608198c9e15888f780926d0566991c244c7b58f2c93"
     ],
     "graph_case_count": 0
   },
@@ -62,33 +63,23 @@
       "signal-contradictory-block"
     ],
     "receipt_ids": [
-      "sha256:88bcf8881edea3254c81f3a2531cabcb42187c415e155ff971105dd59f57d4e4"
+      "sha256:64ce40ba90d03ff552ac7c4bc7174ac78c804d66b681655e77b414a49f979571"
     ],
     "graph_case_count": 0
   },
   "dogfood": {
     "status": "sealed",
-    "receipt_id": "sha256:0d8487ce947b67ae04d36bdcea199235e86d1a20e2c45db6030ada7e28bb6577",
+    "receipt_id": "sha256:5e3bd02d3ad36ec4a51fbde4eeb58a3cc628b866cb5f09b3fc2fd2bdfed704ce",
     "run_id": "run_agent_task-rollback-judge-output",
     "skill_name": "rollback-judge",
     "closure": {
-      "closed_at": "2026-07-12T04:14:52.615Z",
+      "closed_at": "2026-07-14T04:42:48.366Z",
       "disposition": "closed",
       "reason_code": "agent_act_closed",
       "summary": "agent act sealed (closed)"
     },
-    "registry_provenance": {
-      "digest": "sha256:b6240d8923723e8a07057dd678104dfecab87594695e5e49d0ed4a0ca53e560e",
-      "profile_digest": "sha256:e1080cba9ca05a1917ad14be5b5f4ea2ad5f91db95d3cfb1e1d5e314fd4759e8",
-      "registry_key_id": "runx-registry-ed25519-v1",
-      "registry_source": "remote https://api.runx.ai",
-      "registry_source_fingerprint": "ba1ac16b631195fd",
-      "skill_id": "ryde-play/rollback-judge",
-      "trust_state": "trusted",
-      "trust_tier": "community",
-      "version": "sha-daf218f5cd7d"
-    },
     "output_summary": {
+      "act_reason": "action=rollback reason=error_rate_critical target=2026.07.12.2",
       "decision": {
         "action": "rollback",
         "reason": "error_rate_critical",
@@ -133,72 +124,121 @@
     "receipt_act": {
       "id": "act_judge",
       "form": "review",
-      "purpose": "Judge a supplied deploy signal and record a bounded rollback or escalation decision.",
-      "legitimacy": "Local operator supplied deploy evidence for review; release owns any downstream consequence."
+      "summary": "action=rollback reason=error_rate_critical target=2026.07.12.2",
+      "target_refs": [
+        {
+          "type": "tracking_item",
+          "uri": "runx:release:checkout@2026.07.12.2"
+        }
+      ],
+      "closure": {
+        "disposition": "closed",
+        "reason_code": "agent_act_closed",
+        "summary": "action=rollback reason=error_rate_critical target=2026.07.12.2",
+        "closed_at": "2026-07-14T04:42:48.366Z"
+      }
+    },
+    "receipt_decision": {
+      "id": "dec_judge",
+      "choice": "close",
+      "target_ref": {
+        "type": "tracking_item",
+        "uri": "runx:release:checkout@2026.07.12.2"
+      },
+      "justification": {
+        "summary": "action=rollback reason=error_rate_critical target=2026.07.12.2",
+        "evidence_refs": []
+      }
     }
   },
   "receipt": {
-    "ref": "runx:receipt:sha256:0d8487ce947b67ae04d36bdcea199235e86d1a20e2c45db6030ada7e28bb6577",
-    "id": "sha256:0d8487ce947b67ae04d36bdcea199235e86d1a20e2c45db6030ada7e28bb6577",
+    "ref": "runx:receipt:sha256:5e3bd02d3ad36ec4a51fbde4eeb58a3cc628b866cb5f09b3fc2fd2bdfed704ce",
+    "id": "sha256:5e3bd02d3ad36ec4a51fbde4eeb58a3cc628b866cb5f09b3fc2fd2bdfed704ce",
     "issuer": {
-      "kid": "rollback-judge-20260712-v1",
-      "public_key_sha256": "sha256:4c1e9fb14cd871e9e298ee21743481e25b80b0cf9940de5fbbb469aa06c97e6f",
-      "type": "hosted"
+      "type": "hosted",
+      "kid": "rollback-judge-20260714-revision-v2",
+      "public_key_sha256": "sha256:4de727311e7671899ac8ce3cf927f4c335844b89f3af3da8268d16f56be37c16"
     },
     "seal": {
-      "closed_at": "2026-07-12T04:14:52.615Z",
+      "disposition": "closed",
+      "reason_code": "agent_act_closed",
+      "summary": "agent act sealed (closed)",
+      "closed_at": "2026-07-14T04:42:48.366Z",
+      "last_observed_at": "2026-07-14T04:42:48.366Z",
       "criteria": [
         {
           "criterion_id": "act_closed",
-          "evidence_refs": [],
           "status": "verified",
-          "summary": "Judge a supplied deploy signal and record a bounded rollback or escalation decision.",
-          "verification_refs": []
+          "evidence_refs": [],
+          "verification_refs": [],
+          "summary": "action=rollback reason=error_rate_critical target=2026.07.12.2"
         }
-      ],
-      "disposition": "closed",
-      "last_observed_at": "2026-07-12T04:14:52.615Z",
-      "reason_code": "agent_act_closed",
-      "summary": "agent act sealed (closed)"
+      ]
     },
     "acts": [
       {
         "id": "act_judge",
         "form": "review",
-        "summary": "Judge a supplied deploy signal and record a bounded rollback or escalation decision.",
+        "summary": "action=rollback reason=error_rate_critical target=2026.07.12.2",
+        "target_refs": [
+          {
+            "type": "tracking_item",
+            "uri": "runx:release:checkout@2026.07.12.2"
+          }
+        ],
         "closure": {
-          "closed_at": "2026-07-12T04:14:52.615Z",
           "disposition": "closed",
           "reason_code": "agent_act_closed",
-          "summary": "Judge a supplied deploy signal and record a bounded rollback or escalation decision."
+          "summary": "action=rollback reason=error_rate_critical target=2026.07.12.2",
+          "closed_at": "2026-07-14T04:42:48.366Z"
+        }
+      }
+    ],
+    "decisions": [
+      {
+        "id": "dec_judge",
+        "choice": "close",
+        "target_ref": {
+          "type": "tracking_item",
+          "uri": "runx:release:checkout@2026.07.12.2"
+        },
+        "justification": {
+          "summary": "action=rollback reason=error_rate_critical target=2026.07.12.2",
+          "evidence_refs": []
+        },
+        "closure": {
+          "disposition": "closed",
+          "reason_code": "agent_act_closed",
+          "summary": "action=rollback reason=error_rate_critical target=2026.07.12.2",
+          "closed_at": "2026-07-14T04:42:48.366Z"
         }
       }
     ]
   },
   "verification_command": "RUNX_RECEIPT_VERIFY_KID=<kid> RUNX_RECEIPT_VERIFY_ED25519_PUBLIC_KEY_BASE64=<public_key_base64> runx verify --receipt runx-receipt.json --json",
   "verification_public_key": {
-    "kid": "rollback-judge-20260712-v1",
-    "public_key_base64": "F9dWGva+gk/LmP2qsTjjk1QOLVSpGcvQozD2/B3kFwY=",
-    "note": "Public verification key for the rollback-judge dogfood receipt; private seed is intentionally not published."
+    "kid": "rollback-judge-20260714-revision-v2",
+    "public_key_base64": "I2p5N5MDAihCE8lrJykkQe2zz1F1onjYn1PID00Hstw=",
+    "note": "Public verification key for the rollback-judge revision dogfood receipt; private seed is intentionally not published."
   },
   "verdict": {
     "schema": "runx.verify_verdict.v1",
-    "receipt_id": "sha256:0d8487ce947b67ae04d36bdcea199235e86d1a20e2c45db6030ada7e28bb6577",
+    "receipt_id": "sha256:5e3bd02d3ad36ec4a51fbde4eeb58a3cc628b866cb5f09b3fc2fd2bdfed704ce",
     "valid": true,
     "digest": {
       "status": "valid",
-      "expected": "sha256:7dd760148f7bd0b4b60f983fa363af29e1f5626a75ff267bf6d381232fb03444",
-      "actual": "sha256:7dd760148f7bd0b4b60f983fa363af29e1f5626a75ff267bf6d381232fb03444"
+      "expected": "sha256:b97842078750f8b6ca5f875e63d86cb007e4a04d4b4f41e469cb15c33a4302c1",
+      "actual": "sha256:b97842078750f8b6ca5f875e63d86cb007e4a04d4b4f41e469cb15c33a4302c1"
     },
     "content_address": {
       "status": "valid",
-      "expected": "sha256:0d8487ce947b67ae04d36bdcea199235e86d1a20e2c45db6030ada7e28bb6577",
-      "actual": "sha256:0d8487ce947b67ae04d36bdcea199235e86d1a20e2c45db6030ada7e28bb6577"
+      "expected": "sha256:5e3bd02d3ad36ec4a51fbde4eeb58a3cc628b866cb5f09b3fc2fd2bdfed704ce",
+      "actual": "sha256:5e3bd02d3ad36ec4a51fbde4eeb58a3cc628b866cb5f09b3fc2fd2bdfed704ce"
     },
     "signature": {
       "mode": "production",
       "status": "valid",
-      "kid": "rollback-judge-20260712-v1"
+      "kid": "rollback-judge-20260714-revision-v2"
     },
     "lineage": {
       "status": "unverified",
@@ -243,14 +283,24 @@
       "detail": "critical signal yields rollback decision with reason error_rate_critical"
     },
     {
+      "id": "receipt_act_summary",
+      "status": "passed",
+      "detail": "action=rollback reason=error_rate_critical target=2026.07.12.2"
+    },
+    {
+      "id": "receipt_target_refs",
+      "status": "passed",
+      "detail": "[{\"type\":\"tracking_item\",\"uri\":\"runx:release:checkout@2026.07.12.2\"}]"
+    },
+    {
+      "id": "receipt_decision_target_ref",
+      "status": "passed",
+      "detail": "{\"type\":\"tracking_item\",\"uri\":\"runx:release:checkout@2026.07.12.2\"}"
+    },
+    {
       "id": "release_handoff",
       "status": "passed",
       "detail": "decision seeds release.publish.approval with approved=true and dispatches by naming release"
-    },
-    {
-      "id": "review_act",
-      "status": "passed",
-      "detail": "receipt act_judge uses form=review"
     },
     {
       "id": "no_minted_authority",
@@ -261,6 +311,11 @@
       "id": "receipt_verify",
       "status": "passed",
       "detail": "valid=true; signature.status=valid; signature.mode=production"
+    },
+    {
+      "id": "resume_input_preservation",
+      "status": "passed",
+      "detail": "PR source preserves pending run inputs across runx resume so target_from binds act_target_ref into the sealed receipt."
     }
   ]
 }
