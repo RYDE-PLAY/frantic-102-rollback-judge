@@ -1,0 +1,30 @@
+name: Rollback Judge Deployment Monitor
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    name: Probe deployed release health
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch and validate the live deployment marker
+        env:
+          TARGET_URL: https://raw.githubusercontent.com/RYDE-PLAY/frantic-102-rollback-judge/main/public/deploy-target.json
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error \
+            --header 'cache-control: no-cache' \
+            --output deploy-target.json \
+            "${TARGET_URL}?run=${GITHUB_RUN_ID}"
+          node -e '
+            const fs = require("node:fs");
+            const target = JSON.parse(fs.readFileSync("deploy-target.json", "utf8"));
+            console.log(JSON.stringify({ target_url: process.env.TARGET_URL, target }, null, 2));
+            if (target.health !== "healthy") {
+              throw new Error(`deployment health is ${target.health}: ${target.incident || "no incident detail"}`);
+            }
+          '

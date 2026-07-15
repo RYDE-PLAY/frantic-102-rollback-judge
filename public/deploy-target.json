@@ -1,0 +1,7 @@
+{
+  "schema": "rollback-judge.deployment-target.v1",
+  "service": "rollback-judge-demo",
+  "version": "2026.07.15.1",
+  "health": "healthy",
+  "incident": null
+}
