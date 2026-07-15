@@ -8,12 +8,12 @@
       "skill_id": "ryde-play/rollback-judge",
       "owner": "ryde-play",
       "name": "rollback-judge",
-      "version": "sha-37688e7136f0",
+      "version": "sha-243da363bf91",
       "digest": "51bee5d21c036bf7c6a375ddce84b5a9385b011cd9295a83a8dc134e71917e5f",
-      "profile_digest": "cb92569be9a91b2f63a0fd758113b0b5cba1f16fcdd881e4da0913cba3f8b284",
+      "profile_digest": "278867049b04b931145c20c7f417ea44f74158262f61fa7b75ea1ec3bbfbc495",
       "trust_tier": "community",
-      "install_command": "runx add ryde-play/rollback-judge@sha-37688e7136f0 --registry https://api.runx.ai",
-      "run_command": "runx skill ryde-play/rollback-judge@sha-37688e7136f0 --registry https://api.runx.ai",
+      "install_command": "runx add ryde-play/rollback-judge@sha-243da363bf91 --registry https://api.runx.ai",
+      "run_command": "runx skill ryde-play/rollback-judge@sha-243da363bf91 --registry https://api.runx.ai",
       "public_url": "https://runx.ai/x/ryde-play/rollback-judge"
     }
   }

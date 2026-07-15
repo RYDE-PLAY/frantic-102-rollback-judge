@@ -8,13 +8,13 @@ fields.
 
 ## Submitted Revision
 
-- Package: `ryde-play/rollback-judge@sha-37688e7136f0`
-- Registry: https://runx.ai/x/ryde-play/rollback-judge@sha-37688e7136f0
-- Source: https://github.com/RYDE-PLAY/runx/tree/9d08a5e66ae4b8115718a907940b497c6f9a1bda/skills/rollback-judge
+- Package: `ryde-play/rollback-judge@sha-243da363bf91`
+- Registry: https://runx.ai/x/ryde-play/rollback-judge@sha-243da363bf91
+- Source: https://github.com/RYDE-PLAY/runx/tree/87cc5e211e12343f9c91aaf03a90c1dbaeab85b7/skills/rollback-judge
 - PR: https://github.com/runxhq/runx/pull/277
-- Raw X.yaml: https://raw.githubusercontent.com/RYDE-PLAY/runx/9d08a5e66ae4b8115718a907940b497c6f9a1bda/skills/rollback-judge/X.yaml
-- Raw SKILL.md: https://raw.githubusercontent.com/RYDE-PLAY/runx/9d08a5e66ae4b8115718a907940b497c6f9a1bda/skills/rollback-judge/SKILL.md
-- Dogfood receipt: `runx:receipt:sha256:3788f5ce43f22987fbec4d9be437644d0a24fdc698299e29f8a4c886a5c192ff`
+- Raw X.yaml: https://raw.githubusercontent.com/RYDE-PLAY/runx/87cc5e211e12343f9c91aaf03a90c1dbaeab85b7/skills/rollback-judge/X.yaml
+- Raw SKILL.md: https://raw.githubusercontent.com/RYDE-PLAY/runx/87cc5e211e12343f9c91aaf03a90c1dbaeab85b7/skills/rollback-judge/SKILL.md
+- Dogfood receipt: `runx:receipt:sha256:6f84aadb5bdb4810691f53e5e1be088bc4653f1b5ee6256fb3d395520515a2d6`
 
 ## Real Deployment Signal
 
@@ -56,7 +56,7 @@ fields.
 
 - Local harness passed two cases with `runx-cli 0.6.14`.
 - The package publish passed the registry hosted harness.
-- A clean install of `ryde-play/rollback-judge@sha-37688e7136f0` succeeded.
+- A clean install of `ryde-play/rollback-judge@sha-243da363bf91` succeeded.
 - The clean installed-package harness passed two cases.
 - Hosted harness uses deterministic caller answers tied to the public immutable
   monitor runs; this keeps the hosted fixture reproducible where outbound
@@ -76,11 +76,11 @@ fields.
 ## New User Runbook
 
 - Check CLI: `runx --version` (this revision used `runx-cli 0.6.14`).
-- Install: `runx add ryde-play/rollback-judge@sha-37688e7136f0 --registry https://api.runx.ai --json`.
+- Install: `runx add ryde-play/rollback-judge@sha-243da363bf91 --registry https://api.runx.ai --json`.
 - Prepare typed inputs containing the current run API URL, its public HTML URL,
   the repository-relative marker path, a prior successful run API URL, and any
   tested forward-fix evidence.
-- Run: `runx skill ryde-play/rollback-judge@sha-37688e7136f0 --registry https://api.runx.ai --json` with the five arguments shown in `evidence.json.commands.dogfood`.
+- Run: `runx skill ryde-play/rollback-judge@sha-243da363bf91 --registry https://api.runx.ai --json` with the five arguments shown in `evidence.json.commands.dogfood`.
 - Save the returned `receipt` object as `runx-receipt.json`.
 - Verify with the public key in `verification-key.json` and:
   `runx verify --receipt runx-receipt.json --json`.

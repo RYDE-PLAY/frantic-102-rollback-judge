@@ -3,17 +3,17 @@
   "registry": {
     "action": "read",
     "source": "remote",
-    "ref": "ryde-play/rollback-judge@sha-37688e7136f0",
+    "ref": "ryde-play/rollback-judge@sha-243da363bf91",
     "skill": {
       "skill_id": "ryde-play/rollback-judge",
       "owner": "ryde-play",
       "name": "rollback-judge",
       "description": "Read a public post-deploy monitor run and produce a bounded rollback, roll-forward, or escalation decision without performing the release action.",
       "category": "ops",
-      "version": "sha-37688e7136f0",
+      "version": "sha-243da363bf91",
       "digest": "51bee5d21c036bf7c6a375ddce84b5a9385b011cd9295a83a8dc134e71917e5f",
       "markdown": "---\nname: rollback-judge\ndescription: Read a public post-deploy monitor run and produce a bounded rollback, roll-forward, or escalation decision without performing the release action.\nrunx:\n  category: ops\n---\n\n# Rollback Judge\n\nRollback Judge is a read-only review skill for post-deploy incidents. Its\ndefault runner fetches a public GitHub Actions deployment-monitor run at\nexecution time, reads the deployment marker pinned to that run's commit, and\ncompares the observed error rate with its threshold. A rollback can be approved\nonly when the current monitor run failed and a separately supplied prior run\nproves a healthy version.\n\nThe skill never deploys, rolls back, publishes, calls a write API, or mints\nauthority. It emits a typed answer for the existing\n`release.publish.approval` gate; the `release` skill and a project-declared\nrelease interface own every downstream effect.\n\n## Source Contract\n\n`deploy_signal.evidence.source_url` must be a public GitHub Actions run API URL:\n\n```text\nhttps://api.github.com/repos/<owner>/<repo>/actions/runs/<run-id>\n```\n\nThe judge fetches that URL during the run. It then uses the returned repository\nand full `head_sha` to read `current_version.marker_path` from the immutable\ncommit on `raw.githubusercontent.com`. The marker must contain:\n\n```yaml\nschema: rollback-judge.deployment-target.v1\nservice: checkout\nversion: 2026.07.15.4\nhealth: degraded\nsignal_kind: error_rate_spike\nmetric:\n  name: http_5xx_rate\n  observed_percent: 18.4\n  threshold_percent: 2\n  window: 15m\nincident: post-deploy http_5xx_rate exceeded the release threshold\n```\n\nFor rollback, `prior_version.source_url` must identify another completed monitor\nrun. The judge fetches its commit-pinned marker and accepts it as a target only\nwhen the run concluded `success`, the marker is `healthy`, and its observed\nmetric does not exceed the threshold.\n\n## Decision Rules\n\n- Roll back only when the live current run is completed with `failure`, the\n  current marker is unhealthy, and the measured error rate exceeds its\n  threshold.\n- Locate the rollback target only through `prior_version.source_url`; never use\n  a hand-typed version or digest as proof of the prior release.\n- Roll forward only when a failing live monitor is present and\n  `forward_fix_evidence` includes test runs plus review signoff.\n- Hold and escalate when the run is incomplete, the workflow does not match,\n  the API result contradicts the marker, the source cannot be read, the current\n  signal is nonfailing, or the prior release is not proven healthy.\n- Never accept `severity: critical` by itself as evidence of failure.\n\n## Typed Inputs\n\n- `deploy_signal`: `{ severity, kind, evidence }`; evidence carries the public\n  monitor `source_url` and optional expected `workflow_name`.\n- `current_version`: deployment subject with `service` and `marker_path`.\n- `monitor_run_ref`: public HTML URL of the current monitor run. The judge\n  verifies that it equals the `html_url` returned by the API before sealing;\n  stock runx binds this trusted URL as the review act target.\n- `prior_version`: rollback candidate with its own public `source_url` and\n  `marker_path`.\n- `forward_fix_evidence`: `{ test_runs, review_signoff }`.\n\n## Typed Output\n\n```yaml\ndecision:\n  action: rollback | roll_forward | hold\n  reason: string\n  version_target: object | null\nescalation:\n  required: boolean\n  reason: string | null\n  missing_evidence: [string]\nrelease_publish_approval:\n  gate_id: release.publish.approval\n  approved: boolean\n  reason: string\n  answer:\n    approved: boolean\n    reason: string\nreview_record:\n  form: review\n  signal: { severity, kind }\n  evidence_used: [string]\n  refused: { reason: string | null }\nsource_read:\n  current: object\n  prior: object | null\n```\n\n`source_read` records the API URL, fetched time, response SHA-256, ETag, monitor\nrun id, workflow, conclusion, commit SHA, public run URL, and the commit-pinned\ndeployment marker. The sealed review act binds the derived decision, reason,\nand release target; callers do not provide `act_decision` or `act_target_ref`.\n\n## Run\n\nInstall the published package, then pass the four typed objects:\n\n```bash\nrunx skill <owner>/rollback-judge@<version> --registry https://api.runx.ai --json \\\n  --input-json deploy_signal='<json>' \\\n  --input-json current_version='<json>' \\\n  --input monitor_run_ref='https://github.com/<owner>/<repo>/actions/runs/<run-id>' \\\n  --input-json prior_version='<json>' \\\n  --input-json forward_fix_evidence='<json>'\n```\n\nThe package includes `fixtures/critical-signal.json` with public, immutable run\nreferences. Hosted harness replays expected answers tied to those references so\nit remains deterministic; the default `judge` runner used for dogfood performs\nthe network reads. The contradictory case receives no answer, stops with\n`needs_agent`, and emits no decision or approval.",
-      "profile_digest": "cb92569be9a91b2f63a0fd758113b0b5cba1f16fcdd881e4da0913cba3f8b284",
+      "profile_digest": "278867049b04b931145c20c7f417ea44f74158262f61fa7b75ea1ec3bbfbc495",
       "runner_names": [
         "agent_review",
         "judge"
@@ -34,7 +34,7 @@
           "id": "publisher:user_0e65bd23969ab1dea100a77c",
           "status": "declared",
           "summary": "RYDE",
-          "issued_at": "2026-07-15T06:16:54.501Z",
+          "issued_at": "2026-07-15T06:26:57.706Z",
           "metadata": {
             "publisher_display_name": "RYDE",
             "publisher_handle": "ryde-play",
@@ -44,8 +44,8 @@
           }
         }
       ],
-      "install_command": "runx add ryde-play/rollback-judge@sha-37688e7136f0 --registry https://api.runx.ai",
-      "run_command": "runx skill ryde-play/rollback-judge@sha-37688e7136f0 --registry https://api.runx.ai"
+      "install_command": "runx add ryde-play/rollback-judge@sha-243da363bf91 --registry https://api.runx.ai",
+      "run_command": "runx skill ryde-play/rollback-judge@sha-243da363bf91 --registry https://api.runx.ai"
     }
   }
 }

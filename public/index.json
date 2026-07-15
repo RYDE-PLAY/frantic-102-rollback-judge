@@ -1,8 +1,8 @@
 {
   "schema": "frantic.artifact_index.v1",
-  "package": "ryde-play/rollback-judge@sha-37688e7136f0",
-  "source_commit": "9d08a5e66ae4b8115718a907940b497c6f9a1bda",
-  "receipt_ref": "runx:receipt:sha256:3788f5ce43f22987fbec4d9be437644d0a24fdc698299e29f8a4c886a5c192ff",
+  "package": "ryde-play/rollback-judge@sha-243da363bf91",
+  "source_commit": "87cc5e211e12343f9c91aaf03a90c1dbaeab85b7",
+  "receipt_ref": "runx:receipt:sha256:6f84aadb5bdb4810691f53e5e1be088bc4653f1b5ee6256fb3d395520515a2d6",
   "files": [
     "evidence.json",
     "verification.json",

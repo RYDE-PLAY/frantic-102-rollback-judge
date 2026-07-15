@@ -8,7 +8,7 @@
         }
       ],
       "closure": {
-        "closed_at": "2026-07-15T06:18:52.640Z",
+        "closed_at": "2026-07-15T06:28:26.473Z",
         "disposition": "closed",
         "reason_code": "agent_act_closed",
         "summary": "action=rollback reason=error_rate_critical target=2026.07.15.3 source=github-actions:29393017505"
@@ -62,7 +62,7 @@
     "terms": []
   },
   "canonicalization": "runx.receipt.c14n.v1",
-  "created_at": "2026-07-15T06:18:52.640Z",
+  "created_at": "2026-07-15T06:28:26.473Z",
   "decisions": [
     {
       "artifact_refs": [
@@ -73,7 +73,7 @@
       ],
       "choice": "close",
       "closure": {
-        "closed_at": "2026-07-15T06:18:52.640Z",
+        "closed_at": "2026-07-15T06:28:26.473Z",
         "disposition": "closed",
         "reason_code": "agent_act_closed",
         "summary": "action=rollback reason=error_rate_critical target=2026.07.15.3 source=github-actions:29393017505"
@@ -103,8 +103,8 @@
       "selected_harness_ref": null
     }
   ],
-  "digest": "sha256:d6d3cbaa95c0749688536c0939aec7b10c44d94641e1b60468a6d90ec243380c",
-  "id": "sha256:3788f5ce43f22987fbec4d9be437644d0a24fdc698299e29f8a4c886a5c192ff",
+  "digest": "sha256:5d69dd49415a71ee80baa2e986e2af3f27c55e2b7a92036730fd0cf17206371f",
+  "id": "sha256:6f84aadb5bdb4810691f53e5e1be088bc4653f1b5ee6256fb3d395520515a2d6",
   "idempotency": {
     "content_hash": "sha256:run_judge_7f0575971c1b-turn-content",
     "intent_key": "sha256:run_judge_7f0575971c1b-turn-intent",
@@ -121,7 +121,7 @@
   },
   "schema": "runx.receipt.v1",
   "seal": {
-    "closed_at": "2026-07-15T06:18:52.640Z",
+    "closed_at": "2026-07-15T06:28:26.473Z",
     "criteria": [
       {
         "criterion_id": "act_closed",
@@ -132,14 +132,14 @@
       }
     ],
     "disposition": "closed",
-    "last_observed_at": "2026-07-15T06:18:52.640Z",
+    "last_observed_at": "2026-07-15T06:28:26.473Z",
     "reason_code": "agent_act_closed",
     "summary": "governed graph turn sealed"
   },
   "signals": [],
   "signature": {
     "alg": "Ed25519",
-    "value": "base64:WiRGft2xobkK2ZcPUzPKmdX1_6MyTiWm3TuIlUSaARmtVx7zH8QoGNSxfsv5kErsCobhN-R91MAYqAspMdgWAA"
+    "value": "base64:GLpgXwltRE0-UMceDNGV_JAnuU4b8nbAZkG6CUS7_Zf37OGdr2WUsYdrhBoINqhsHZmMpGdWUjf8_fYwjJf4Dw"
   },
   "subject": {
     "commitments": [],
