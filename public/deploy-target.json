@@ -1,7 +1,14 @@
 {
   "schema": "rollback-judge.deployment-target.v1",
   "service": "rollback-judge-demo",
-  "version": "2026.07.15.2",
-  "health": "degraded",
-  "incident": "post-deploy probe returned an unhealthy release marker"
+  "version": "2026.07.15.3",
+  "health": "healthy",
+  "signal_kind": "error_rate_spike",
+  "metric": {
+    "name": "http_5xx_rate",
+    "observed_percent": 0.4,
+    "threshold_percent": 2,
+    "window": "15m"
+  },
+  "incident": null
 }

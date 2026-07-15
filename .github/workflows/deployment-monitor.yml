@@ -24,7 +24,14 @@ jobs:
             const fs = require("node:fs");
             const target = JSON.parse(fs.readFileSync("deploy-target.json", "utf8"));
             console.log(JSON.stringify({ target_url: process.env.TARGET_URL, target }, null, 2));
-            if (target.health !== "healthy") {
-              throw new Error(`deployment health is ${target.health}: ${target.incident || "no incident detail"}`);
+            const observed = Number(target.metric?.observed_percent);
+            const threshold = Number(target.metric?.threshold_percent);
+            if (!Number.isFinite(observed) || !Number.isFinite(threshold)) {
+              throw new Error("deployment marker is missing numeric error-rate evidence");
+            }
+            if (target.health !== "healthy" || observed > threshold) {
+              throw new Error(
+                `deployment health is ${target.health}; ${target.metric.name}=${observed}% exceeds ${threshold}%: ${target.incident || "no incident detail"}`,
+              );
             }
           '
