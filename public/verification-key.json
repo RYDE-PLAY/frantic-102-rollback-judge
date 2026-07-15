@@ -1,5 +1,6 @@
 {
-  "kid": "rollback-judge-20260714-graph-v1",
-  "public_key_base64": "J/yiMnEA/0Ye3yhEqvG2950DaFMKhmY0DIwgiSuLgqA=",
-  "note": "Public verification key for the rollback-judge graph dogfood receipt; private seed is intentionally not published."
+  "kid": "rollback-judge-20260715-live-source-v1",
+  "algorithm": "Ed25519",
+  "public_key_base64": "npbWNRBWZV6UOuOebL/amgtN/H1hUAr91uqeY1LrJg0=",
+  "note": "Public verification key for the post-publish live-source dogfood receipt. The private seed is not published."
 }

@@ -1,11 +1,13 @@
 {
   "schema": "frantic.artifact_index.v1",
-  "package": "ryde-play/rollback-judge@sha-9c10d9cc79c2",
-  "receipt_ref": "runx:receipt:sha256:7cdf335e3d940dede2ce5c469426f714bb3ccfb249a116fc18304b4ab23f9044",
+  "package": "ryde-play/rollback-judge@sha-37688e7136f0",
+  "source_commit": "9d08a5e66ae4b8115718a907940b497c6f9a1bda",
+  "receipt_ref": "runx:receipt:sha256:3788f5ce43f22987fbec4d9be437644d0a24fdc698299e29f8a4c886a5c192ff",
   "files": [
     "evidence.json",
     "verification.json",
     "report.md",
+    "deploy-target.json",
     "publish.json",
     "registry-read.json",
     "runx-add.json",
