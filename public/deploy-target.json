@@ -1,14 +1,14 @@
 {
   "schema": "rollback-judge.deployment-target.v1",
   "service": "rollback-judge-demo",
-  "version": "2026.07.15.3",
-  "health": "healthy",
+  "version": "2026.07.15.4",
+  "health": "degraded",
   "signal_kind": "error_rate_spike",
   "metric": {
     "name": "http_5xx_rate",
-    "observed_percent": 0.4,
+    "observed_percent": 18.4,
     "threshold_percent": 2,
     "window": "15m"
   },
-  "incident": null
+  "incident": "post-deploy http_5xx_rate exceeded the release threshold"
 }
