@@ -1,21 +1,18 @@
 {
-  "schema": "frantic.artifact_index.v1",
-  "package": "ryde-play/rollback-judge@sha-243da363bf91",
-  "source_commit": "87cc5e211e12343f9c91aaf03a90c1dbaeab85b7",
-  "receipt_ref": "runx:receipt:sha256:6f84aadb5bdb4810691f53e5e1be088bc4653f1b5ee6256fb3d395520515a2d6",
-  "files": [
-    "evidence.json",
-    "verification.json",
-    "report.md",
-    "deploy-target.json",
-    "publish.json",
-    "registry-read.json",
-    "runx-add.json",
-    "local-harness.json",
-    "hosted-installed-harness.json",
-    "registry-dogfood.json",
-    "runx-receipt.json",
-    "runx-verify.json",
-    "verification-key.json"
-  ]
+  "schema": "frantic.rollback_judge.index.v4",
+  "task": 102,
+  "package": "ryde-play/rollback-judge@sha-90245faf0359",
+  "receipt_ref": "runx:receipt:sha256:dd5855ab09e05e30fb2b4218126a594fd3989669802d7422cf877ae7bba95a41",
+  "files": {
+    "publish_json": "public/publish.json",
+    "registry_read_json": "public/registry-read.json",
+    "runx_add_json": "public/runx-add.json",
+    "hosted_installed_harness_json": "public/hosted-installed-harness.json",
+    "registry_dogfood_json": "public/registry-dogfood.json",
+    "graph_state_json": "public/graph-state.json",
+    "receipt_json": "public/runx-receipt.json",
+    "receipt_content_addressed_json": "public/sha256:dd5855ab09e05e30fb2b4218126a594fd3989669802d7422cf877ae7bba95a41.json",
+    "runx_verify_json": "public/runx-verify.json",
+    "verification_key_json": "public/verification-key.json"
+  }
 }

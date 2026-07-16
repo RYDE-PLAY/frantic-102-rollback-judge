@@ -1,0 +1,1389 @@
+{
+  "schema": "runx.graph_skill_state.v1",
+  "run_id": "run_judge_7f0575971c1b",
+  "runner_name": "judge",
+  "graph_inputs": {
+    "current_version": {
+      "marker_path": "public/deploy-target.json",
+      "service": "rollback-judge-demo",
+      "source_url": "https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505"
+    },
+    "deploy_signal": {
+      "evidence": {
+        "source_type": "github_actions_run",
+        "source_url": "https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505",
+        "workflow_name": "Rollback Judge Deployment Monitor"
+      },
+      "kind": "error_rate_spike",
+      "severity": "critical"
+    },
+    "forward_fix_evidence": {
+      "review_signoff": null,
+      "test_runs": []
+    },
+    "monitor_run_ref": "https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505",
+    "prior_version": {
+      "marker_path": "public/deploy-target.json",
+      "service": "rollback-judge-demo",
+      "source_url": "https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457"
+    }
+  },
+  "checkpoint": {
+    "graph_name": "rollback-judge",
+    "state": {
+      "graphId": "rollback-judge",
+      "status": "running",
+      "steps": [
+        {
+          "stepId": "decide",
+          "status": "succeeded",
+          "attempts": 1,
+          "startedAt": "2026-07-16T14:05:23.820Z",
+          "completedAt": "2026-07-16T14:05:23.820Z",
+          "receiptId": "sha256:e1c3b484145a07ec048aa4c4ed5f870310558873661b1d39dfdae61120ed7167",
+          "outputs": {
+            "act_decision": "approve",
+            "act_reason": "action=rollback reason=error_rate_critical target=2026.07.15.3 source=github-actions:29393017505",
+            "act_target_ref": "runx:release:rollback-judge-demo@2026.07.15.3",
+            "decision": {
+              "action": "rollback",
+              "reason": "error_rate_critical",
+              "version_target": {
+                "deployed_at": "2026-07-15T06:01:03Z",
+                "digest": "git:ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9",
+                "source": "prior_version.source_url",
+                "source_url": "https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457",
+                "version": "2026.07.15.3"
+              }
+            },
+            "escalation": {
+              "missing_evidence": [],
+              "reason": null,
+              "required": false
+            },
+            "raw": "{\"act_decision\":\"approve\",\"act_reason\":\"action=rollback reason=error_rate_critical target=2026.07.15.3 source=github-actions:29393017505\",\"act_target_ref\":\"runx:release:rollback-judge-demo@2026.07.15.3\",\"decision\":{\"action\":\"rollback\",\"reason\":\"error_rate_critical\",\"version_target\":{\"version\":\"2026.07.15.3\",\"digest\":\"git:ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9\",\"source\":\"prior_version.source_url\",\"source_url\":\"https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457\",\"deployed_at\":\"2026-07-15T06:01:03Z\"}},\"escalation\":{\"required\":false,\"reason\":null,\"missing_evidence\":[]},\"release_publish_approval\":{\"gate_id\":\"release.publish.approval\",\"approved\":true,\"reason\":\"error_rate_critical\",\"answer\":{\"approved\":true,\"reason\":\"error_rate_critical\"},\"dispatch\":{\"skill\":\"release\",\"answer_key\":\"release.publish.approval\",\"note\":\"Release owns the downstream consequence; rollback-judge performs no deploy effect.\"}},\"review_record\":{\"form\":\"review\",\"signal\":{\"severity\":\"critical\",\"kind\":\"error_rate_spike\"},\"evidence_used\":[\"source_read.current.api_read\",\"source_read.current.deployment_marker.metric\",\"source_read.prior.api_read\",\"source_read.prior.deployment_marker\"],\"refused\":{\"reason\":null}},\"source_read\":{\"current\":{\"provider\":\"github_actions\",\"repository\":\"RYDE-PLAY/frantic-102-rollback-judge\",\"run_id\":29393017505,\"workflow_name\":\"Rollback Judge Deployment Monitor\",\"workflow_path\":\".github/workflows/deployment-monitor.yml\",\"status\":\"completed\",\"conclusion\":\"failure\",\"head_sha\":\"d118cae3bfbe30e1d65d021f8b3ae163166e6041\",\"run_started_at\":\"2026-07-15T06:01:33Z\",\"completed_at\":\"2026-07-15T06:01:43Z\",\"run_url\":\"https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505\",\"api_read\":{\"url\":\"https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505\",\"fetched_at\":\"2026-07-16T14:05:24.914Z\",\"response_sha256\":\"sha256:4f4a6c9b061f43943edfd8a033332eb4bbb3c842ba557419ee3f356fadc60479\",\"etag\":\"W/\\\"f8132214719933f3412b21f13528d3957c27b2d04563ef691e65b284b19d7570\\\"\"},\"deployment_marker\":{\"url\":\"https://raw.githubusercontent.com/RYDE-PLAY/frantic-102-rollback-judge/d118cae3bfbe30e1d65d021f8b3ae163166e6041/public/deploy-target.json\",\"fetched_at\":\"2026-07-16T14:05:25.527Z\",\"response_sha256\":\"sha256:686e0b7c9daf71ca55b4d590ff957b74363e914d61a36c69c5167868e50de963\",\"etag\":\"W/\\\"4d7e6a62fdc185d56f7645501f027144e0ffe902f82a5532daf8e5e65a4e1b74\\\"\",\"schema\":\"rollback-judge.deployment-target.v1\",\"service\":\"rollback-judge-demo\",\"version\":\"2026.07.15.4\",\"health\":\"degraded\",\"signal_kind\":\"error_rate_spike\",\"metric\":{\"name\":\"http_5xx_rate\",\"observed_percent\":18.4,\"threshold_percent\":2,\"window\":\"15m\"},\"incident\":\"post-deploy http_5xx_rate exceeded the release threshold\"}},\"prior\":{\"provider\":\"github_actions\",\"repository\":\"RYDE-PLAY/frantic-102-rollback-judge\",\"run_id\":29392993457,\"workflow_name\":\"Rollback Judge Deployment Monitor\",\"workflow_path\":\".github/workflows/deployment-monitor.yml\",\"status\":\"completed\",\"conclusion\":\"success\",\"head_sha\":\"ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9\",\"run_started_at\":\"2026-07-15T06:01:03Z\",\"completed_at\":\"2026-07-15T06:01:12Z\",\"run_url\":\"https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457\",\"api_read\":{\"url\":\"https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457\",\"fetched_at\":\"2026-07-16T14:05:25.932Z\",\"response_sha256\":\"sha256:d1524cb2041b4eeb5a2e7f97f2355b45db8065d67dfa164a83508243ca09ee4a\",\"etag\":\"W/\\\"e304dde1b134d9bcd1eda46702fbb550e73518a6bc7784e56e8bf31afe08ec53\\\"\"},\"deployment_marker\":{\"url\":\"https://raw.githubusercontent.com/RYDE-PLAY/frantic-102-rollback-judge/ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9/public/deploy-target.json\",\"fetched_at\":\"2026-07-16T14:05:26.283Z\",\"response_sha256\":\"sha256:fcd243bd3b780dd1cb46fa0cfb2098fe87d75a4271fd18b1c16629477fbb2871\",\"etag\":\"W/\\\"e8ac9f69598903cba13f914f6711ff00070d52273760a7f5f467647f4a90864a\\\"\",\"schema\":\"rollback-judge.deployment-target.v1\",\"service\":\"rollback-judge-demo\",\"version\":\"2026.07.15.3\",\"health\":\"healthy\",\"signal_kind\":\"error_rate_spike\",\"metric\":{\"name\":\"http_5xx_rate\",\"observed_percent\":0.4,\"threshold_percent\":2,\"window\":\"15m\"},\"incident\":null}}}}\n",
+            "release_publish_approval": {
+              "answer": {
+                "approved": true,
+                "reason": "error_rate_critical"
+              },
+              "approved": true,
+              "dispatch": {
+                "answer_key": "release.publish.approval",
+                "note": "Release owns the downstream consequence; rollback-judge performs no deploy effect.",
+                "skill": "release"
+              },
+              "gate_id": "release.publish.approval",
+              "reason": "error_rate_critical"
+            },
+            "review_record": {
+              "evidence_used": [
+                "source_read.current.api_read",
+                "source_read.current.deployment_marker.metric",
+                "source_read.prior.api_read",
+                "source_read.prior.deployment_marker"
+              ],
+              "form": "review",
+              "refused": {
+                "reason": null
+              },
+              "signal": {
+                "kind": "error_rate_spike",
+                "severity": "critical"
+              }
+            },
+            "rollback_decision_packet": {
+              "data": {
+                "act_decision": "approve",
+                "act_reason": "action=rollback reason=error_rate_critical target=2026.07.15.3 source=github-actions:29393017505",
+                "act_target_ref": "runx:release:rollback-judge-demo@2026.07.15.3",
+                "decision": {
+                  "action": "rollback",
+                  "reason": "error_rate_critical",
+                  "version_target": {
+                    "deployed_at": "2026-07-15T06:01:03Z",
+                    "digest": "git:ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9",
+                    "source": "prior_version.source_url",
+                    "source_url": "https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457",
+                    "version": "2026.07.15.3"
+                  }
+                },
+                "escalation": {
+                  "missing_evidence": [],
+                  "reason": null,
+                  "required": false
+                },
+                "release_publish_approval": {
+                  "answer": {
+                    "approved": true,
+                    "reason": "error_rate_critical"
+                  },
+                  "approved": true,
+                  "dispatch": {
+                    "answer_key": "release.publish.approval",
+                    "note": "Release owns the downstream consequence; rollback-judge performs no deploy effect.",
+                    "skill": "release"
+                  },
+                  "gate_id": "release.publish.approval",
+                  "reason": "error_rate_critical"
+                },
+                "review_record": {
+                  "evidence_used": [
+                    "source_read.current.api_read",
+                    "source_read.current.deployment_marker.metric",
+                    "source_read.prior.api_read",
+                    "source_read.prior.deployment_marker"
+                  ],
+                  "form": "review",
+                  "refused": {
+                    "reason": null
+                  },
+                  "signal": {
+                    "kind": "error_rate_spike",
+                    "severity": "critical"
+                  }
+                },
+                "source_read": {
+                  "current": {
+                    "api_read": {
+                      "etag": "W/\"f8132214719933f3412b21f13528d3957c27b2d04563ef691e65b284b19d7570\"",
+                      "fetched_at": "2026-07-16T14:05:24.914Z",
+                      "response_sha256": "sha256:4f4a6c9b061f43943edfd8a033332eb4bbb3c842ba557419ee3f356fadc60479",
+                      "url": "https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505"
+                    },
+                    "completed_at": "2026-07-15T06:01:43Z",
+                    "conclusion": "failure",
+                    "deployment_marker": {
+                      "etag": "W/\"4d7e6a62fdc185d56f7645501f027144e0ffe902f82a5532daf8e5e65a4e1b74\"",
+                      "fetched_at": "2026-07-16T14:05:25.527Z",
+                      "health": "degraded",
+                      "incident": "post-deploy http_5xx_rate exceeded the release threshold",
+                      "metric": {
+                        "name": "http_5xx_rate",
+                        "observed_percent": 18.4,
+                        "threshold_percent": 2,
+                        "window": "15m"
+                      },
+                      "response_sha256": "sha256:686e0b7c9daf71ca55b4d590ff957b74363e914d61a36c69c5167868e50de963",
+                      "schema": "rollback-judge.deployment-target.v1",
+                      "service": "rollback-judge-demo",
+                      "signal_kind": "error_rate_spike",
+                      "url": "https://raw.githubusercontent.com/RYDE-PLAY/frantic-102-rollback-judge/d118cae3bfbe30e1d65d021f8b3ae163166e6041/public/deploy-target.json",
+                      "version": "2026.07.15.4"
+                    },
+                    "head_sha": "d118cae3bfbe30e1d65d021f8b3ae163166e6041",
+                    "provider": "github_actions",
+                    "repository": "RYDE-PLAY/frantic-102-rollback-judge",
+                    "run_id": 29393017505,
+                    "run_started_at": "2026-07-15T06:01:33Z",
+                    "run_url": "https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505",
+                    "status": "completed",
+                    "workflow_name": "Rollback Judge Deployment Monitor",
+                    "workflow_path": ".github/workflows/deployment-monitor.yml"
+                  },
+                  "prior": {
+                    "api_read": {
+                      "etag": "W/\"e304dde1b134d9bcd1eda46702fbb550e73518a6bc7784e56e8bf31afe08ec53\"",
+                      "fetched_at": "2026-07-16T14:05:25.932Z",
+                      "response_sha256": "sha256:d1524cb2041b4eeb5a2e7f97f2355b45db8065d67dfa164a83508243ca09ee4a",
+                      "url": "https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457"
+                    },
+                    "completed_at": "2026-07-15T06:01:12Z",
+                    "conclusion": "success",
+                    "deployment_marker": {
+                      "etag": "W/\"e8ac9f69598903cba13f914f6711ff00070d52273760a7f5f467647f4a90864a\"",
+                      "fetched_at": "2026-07-16T14:05:26.283Z",
+                      "health": "healthy",
+                      "incident": null,
+                      "metric": {
+                        "name": "http_5xx_rate",
+                        "observed_percent": 0.4,
+                        "threshold_percent": 2,
+                        "window": "15m"
+                      },
+                      "response_sha256": "sha256:fcd243bd3b780dd1cb46fa0cfb2098fe87d75a4271fd18b1c16629477fbb2871",
+                      "schema": "rollback-judge.deployment-target.v1",
+                      "service": "rollback-judge-demo",
+                      "signal_kind": "error_rate_spike",
+                      "url": "https://raw.githubusercontent.com/RYDE-PLAY/frantic-102-rollback-judge/ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9/public/deploy-target.json",
+                      "version": "2026.07.15.3"
+                    },
+                    "head_sha": "ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9",
+                    "provider": "github_actions",
+                    "repository": "RYDE-PLAY/frantic-102-rollback-judge",
+                    "run_id": 29392993457,
+                    "run_started_at": "2026-07-15T06:01:03Z",
+                    "run_url": "https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457",
+                    "status": "completed",
+                    "workflow_name": "Rollback Judge Deployment Monitor",
+                    "workflow_path": ".github/workflows/deployment-monitor.yml"
+                  }
+                }
+              }
+            },
+            "skill_claim": {
+              "act_decision": "approve",
+              "act_reason": "action=rollback reason=error_rate_critical target=2026.07.15.3 source=github-actions:29393017505",
+              "act_target_ref": "runx:release:rollback-judge-demo@2026.07.15.3",
+              "decision": {
+                "action": "rollback",
+                "reason": "error_rate_critical",
+                "version_target": {
+                  "deployed_at": "2026-07-15T06:01:03Z",
+                  "digest": "git:ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9",
+                  "source": "prior_version.source_url",
+                  "source_url": "https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457",
+                  "version": "2026.07.15.3"
+                }
+              },
+              "escalation": {
+                "missing_evidence": [],
+                "reason": null,
+                "required": false
+              },
+              "release_publish_approval": {
+                "answer": {
+                  "approved": true,
+                  "reason": "error_rate_critical"
+                },
+                "approved": true,
+                "dispatch": {
+                  "answer_key": "release.publish.approval",
+                  "note": "Release owns the downstream consequence; rollback-judge performs no deploy effect.",
+                  "skill": "release"
+                },
+                "gate_id": "release.publish.approval",
+                "reason": "error_rate_critical"
+              },
+              "review_record": {
+                "evidence_used": [
+                  "source_read.current.api_read",
+                  "source_read.current.deployment_marker.metric",
+                  "source_read.prior.api_read",
+                  "source_read.prior.deployment_marker"
+                ],
+                "form": "review",
+                "refused": {
+                  "reason": null
+                },
+                "signal": {
+                  "kind": "error_rate_spike",
+                  "severity": "critical"
+                }
+              },
+              "source_read": {
+                "current": {
+                  "api_read": {
+                    "etag": "W/\"f8132214719933f3412b21f13528d3957c27b2d04563ef691e65b284b19d7570\"",
+                    "fetched_at": "2026-07-16T14:05:24.914Z",
+                    "response_sha256": "sha256:4f4a6c9b061f43943edfd8a033332eb4bbb3c842ba557419ee3f356fadc60479",
+                    "url": "https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505"
+                  },
+                  "completed_at": "2026-07-15T06:01:43Z",
+                  "conclusion": "failure",
+                  "deployment_marker": {
+                    "etag": "W/\"4d7e6a62fdc185d56f7645501f027144e0ffe902f82a5532daf8e5e65a4e1b74\"",
+                    "fetched_at": "2026-07-16T14:05:25.527Z",
+                    "health": "degraded",
+                    "incident": "post-deploy http_5xx_rate exceeded the release threshold",
+                    "metric": {
+                      "name": "http_5xx_rate",
+                      "observed_percent": 18.4,
+                      "threshold_percent": 2,
+                      "window": "15m"
+                    },
+                    "response_sha256": "sha256:686e0b7c9daf71ca55b4d590ff957b74363e914d61a36c69c5167868e50de963",
+                    "schema": "rollback-judge.deployment-target.v1",
+                    "service": "rollback-judge-demo",
+                    "signal_kind": "error_rate_spike",
+                    "url": "https://raw.githubusercontent.com/RYDE-PLAY/frantic-102-rollback-judge/d118cae3bfbe30e1d65d021f8b3ae163166e6041/public/deploy-target.json",
+                    "version": "2026.07.15.4"
+                  },
+                  "head_sha": "d118cae3bfbe30e1d65d021f8b3ae163166e6041",
+                  "provider": "github_actions",
+                  "repository": "RYDE-PLAY/frantic-102-rollback-judge",
+                  "run_id": 29393017505,
+                  "run_started_at": "2026-07-15T06:01:33Z",
+                  "run_url": "https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505",
+                  "status": "completed",
+                  "workflow_name": "Rollback Judge Deployment Monitor",
+                  "workflow_path": ".github/workflows/deployment-monitor.yml"
+                },
+                "prior": {
+                  "api_read": {
+                    "etag": "W/\"e304dde1b134d9bcd1eda46702fbb550e73518a6bc7784e56e8bf31afe08ec53\"",
+                    "fetched_at": "2026-07-16T14:05:25.932Z",
+                    "response_sha256": "sha256:d1524cb2041b4eeb5a2e7f97f2355b45db8065d67dfa164a83508243ca09ee4a",
+                    "url": "https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457"
+                  },
+                  "completed_at": "2026-07-15T06:01:12Z",
+                  "conclusion": "success",
+                  "deployment_marker": {
+                    "etag": "W/\"e8ac9f69598903cba13f914f6711ff00070d52273760a7f5f467647f4a90864a\"",
+                    "fetched_at": "2026-07-16T14:05:26.283Z",
+                    "health": "healthy",
+                    "incident": null,
+                    "metric": {
+                      "name": "http_5xx_rate",
+                      "observed_percent": 0.4,
+                      "threshold_percent": 2,
+                      "window": "15m"
+                    },
+                    "response_sha256": "sha256:fcd243bd3b780dd1cb46fa0cfb2098fe87d75a4271fd18b1c16629477fbb2871",
+                    "schema": "rollback-judge.deployment-target.v1",
+                    "service": "rollback-judge-demo",
+                    "signal_kind": "error_rate_spike",
+                    "url": "https://raw.githubusercontent.com/RYDE-PLAY/frantic-102-rollback-judge/ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9/public/deploy-target.json",
+                    "version": "2026.07.15.3"
+                  },
+                  "head_sha": "ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9",
+                  "provider": "github_actions",
+                  "repository": "RYDE-PLAY/frantic-102-rollback-judge",
+                  "run_id": 29392993457,
+                  "run_started_at": "2026-07-15T06:01:03Z",
+                  "run_url": "https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457",
+                  "status": "completed",
+                  "workflow_name": "Rollback Judge Deployment Monitor",
+                  "workflow_path": ".github/workflows/deployment-monitor.yml"
+                }
+              }
+            },
+            "source_read": {
+              "current": {
+                "api_read": {
+                  "etag": "W/\"f8132214719933f3412b21f13528d3957c27b2d04563ef691e65b284b19d7570\"",
+                  "fetched_at": "2026-07-16T14:05:24.914Z",
+                  "response_sha256": "sha256:4f4a6c9b061f43943edfd8a033332eb4bbb3c842ba557419ee3f356fadc60479",
+                  "url": "https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505"
+                },
+                "completed_at": "2026-07-15T06:01:43Z",
+                "conclusion": "failure",
+                "deployment_marker": {
+                  "etag": "W/\"4d7e6a62fdc185d56f7645501f027144e0ffe902f82a5532daf8e5e65a4e1b74\"",
+                  "fetched_at": "2026-07-16T14:05:25.527Z",
+                  "health": "degraded",
+                  "incident": "post-deploy http_5xx_rate exceeded the release threshold",
+                  "metric": {
+                    "name": "http_5xx_rate",
+                    "observed_percent": 18.4,
+                    "threshold_percent": 2,
+                    "window": "15m"
+                  },
+                  "response_sha256": "sha256:686e0b7c9daf71ca55b4d590ff957b74363e914d61a36c69c5167868e50de963",
+                  "schema": "rollback-judge.deployment-target.v1",
+                  "service": "rollback-judge-demo",
+                  "signal_kind": "error_rate_spike",
+                  "url": "https://raw.githubusercontent.com/RYDE-PLAY/frantic-102-rollback-judge/d118cae3bfbe30e1d65d021f8b3ae163166e6041/public/deploy-target.json",
+                  "version": "2026.07.15.4"
+                },
+                "head_sha": "d118cae3bfbe30e1d65d021f8b3ae163166e6041",
+                "provider": "github_actions",
+                "repository": "RYDE-PLAY/frantic-102-rollback-judge",
+                "run_id": 29393017505,
+                "run_started_at": "2026-07-15T06:01:33Z",
+                "run_url": "https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505",
+                "status": "completed",
+                "workflow_name": "Rollback Judge Deployment Monitor",
+                "workflow_path": ".github/workflows/deployment-monitor.yml"
+              },
+              "prior": {
+                "api_read": {
+                  "etag": "W/\"e304dde1b134d9bcd1eda46702fbb550e73518a6bc7784e56e8bf31afe08ec53\"",
+                  "fetched_at": "2026-07-16T14:05:25.932Z",
+                  "response_sha256": "sha256:d1524cb2041b4eeb5a2e7f97f2355b45db8065d67dfa164a83508243ca09ee4a",
+                  "url": "https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457"
+                },
+                "completed_at": "2026-07-15T06:01:12Z",
+                "conclusion": "success",
+                "deployment_marker": {
+                  "etag": "W/\"e8ac9f69598903cba13f914f6711ff00070d52273760a7f5f467647f4a90864a\"",
+                  "fetched_at": "2026-07-16T14:05:26.283Z",
+                  "health": "healthy",
+                  "incident": null,
+                  "metric": {
+                    "name": "http_5xx_rate",
+                    "observed_percent": 0.4,
+                    "threshold_percent": 2,
+                    "window": "15m"
+                  },
+                  "response_sha256": "sha256:fcd243bd3b780dd1cb46fa0cfb2098fe87d75a4271fd18b1c16629477fbb2871",
+                  "schema": "rollback-judge.deployment-target.v1",
+                  "service": "rollback-judge-demo",
+                  "signal_kind": "error_rate_spike",
+                  "url": "https://raw.githubusercontent.com/RYDE-PLAY/frantic-102-rollback-judge/ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9/public/deploy-target.json",
+                  "version": "2026.07.15.3"
+                },
+                "head_sha": "ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9",
+                "provider": "github_actions",
+                "repository": "RYDE-PLAY/frantic-102-rollback-judge",
+                "run_id": 29392993457,
+                "run_started_at": "2026-07-15T06:01:03Z",
+                "run_url": "https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457",
+                "status": "completed",
+                "workflow_name": "Rollback Judge Deployment Monitor",
+                "workflow_path": ".github/workflows/deployment-monitor.yml"
+              }
+            },
+            "status": "success",
+            "stderr": "",
+            "stdout": "{\"act_decision\":\"approve\",\"act_reason\":\"action=rollback reason=error_rate_critical target=2026.07.15.3 source=github-actions:29393017505\",\"act_target_ref\":\"runx:release:rollback-judge-demo@2026.07.15.3\",\"decision\":{\"action\":\"rollback\",\"reason\":\"error_rate_critical\",\"version_target\":{\"version\":\"2026.07.15.3\",\"digest\":\"git:ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9\",\"source\":\"prior_version.source_url\",\"source_url\":\"https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457\",\"deployed_at\":\"2026-07-15T06:01:03Z\"}},\"escalation\":{\"required\":false,\"reason\":null,\"missing_evidence\":[]},\"release_publish_approval\":{\"gate_id\":\"release.publish.approval\",\"approved\":true,\"reason\":\"error_rate_critical\",\"answer\":{\"approved\":true,\"reason\":\"error_rate_critical\"},\"dispatch\":{\"skill\":\"release\",\"answer_key\":\"release.publish.approval\",\"note\":\"Release owns the downstream consequence; rollback-judge performs no deploy effect.\"}},\"review_record\":{\"form\":\"review\",\"signal\":{\"severity\":\"critical\",\"kind\":\"error_rate_spike\"},\"evidence_used\":[\"source_read.current.api_read\",\"source_read.current.deployment_marker.metric\",\"source_read.prior.api_read\",\"source_read.prior.deployment_marker\"],\"refused\":{\"reason\":null}},\"source_read\":{\"current\":{\"provider\":\"github_actions\",\"repository\":\"RYDE-PLAY/frantic-102-rollback-judge\",\"run_id\":29393017505,\"workflow_name\":\"Rollback Judge Deployment Monitor\",\"workflow_path\":\".github/workflows/deployment-monitor.yml\",\"status\":\"completed\",\"conclusion\":\"failure\",\"head_sha\":\"d118cae3bfbe30e1d65d021f8b3ae163166e6041\",\"run_started_at\":\"2026-07-15T06:01:33Z\",\"completed_at\":\"2026-07-15T06:01:43Z\",\"run_url\":\"https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505\",\"api_read\":{\"url\":\"https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505\",\"fetched_at\":\"2026-07-16T14:05:24.914Z\",\"response_sha256\":\"sha256:4f4a6c9b061f43943edfd8a033332eb4bbb3c842ba557419ee3f356fadc60479\",\"etag\":\"W/\\\"f8132214719933f3412b21f13528d3957c27b2d04563ef691e65b284b19d7570\\\"\"},\"deployment_marker\":{\"url\":\"https://raw.githubusercontent.com/RYDE-PLAY/frantic-102-rollback-judge/d118cae3bfbe30e1d65d021f8b3ae163166e6041/public/deploy-target.json\",\"fetched_at\":\"2026-07-16T14:05:25.527Z\",\"response_sha256\":\"sha256:686e0b7c9daf71ca55b4d590ff957b74363e914d61a36c69c5167868e50de963\",\"etag\":\"W/\\\"4d7e6a62fdc185d56f7645501f027144e0ffe902f82a5532daf8e5e65a4e1b74\\\"\",\"schema\":\"rollback-judge.deployment-target.v1\",\"service\":\"rollback-judge-demo\",\"version\":\"2026.07.15.4\",\"health\":\"degraded\",\"signal_kind\":\"error_rate_spike\",\"metric\":{\"name\":\"http_5xx_rate\",\"observed_percent\":18.4,\"threshold_percent\":2,\"window\":\"15m\"},\"incident\":\"post-deploy http_5xx_rate exceeded the release threshold\"}},\"prior\":{\"provider\":\"github_actions\",\"repository\":\"RYDE-PLAY/frantic-102-rollback-judge\",\"run_id\":29392993457,\"workflow_name\":\"Rollback Judge Deployment Monitor\",\"workflow_path\":\".github/workflows/deployment-monitor.yml\",\"status\":\"completed\",\"conclusion\":\"success\",\"head_sha\":\"ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9\",\"run_started_at\":\"2026-07-15T06:01:03Z\",\"completed_at\":\"2026-07-15T06:01:12Z\",\"run_url\":\"https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457\",\"api_read\":{\"url\":\"https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457\",\"fetched_at\":\"2026-07-16T14:05:25.932Z\",\"response_sha256\":\"sha256:d1524cb2041b4eeb5a2e7f97f2355b45db8065d67dfa164a83508243ca09ee4a\",\"etag\":\"W/\\\"e304dde1b134d9bcd1eda46702fbb550e73518a6bc7784e56e8bf31afe08ec53\\\"\"},\"deployment_marker\":{\"url\":\"https://raw.githubusercontent.com/RYDE-PLAY/frantic-102-rollback-judge/ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9/public/deploy-target.json\",\"fetched_at\":\"2026-07-16T14:05:26.283Z\",\"response_sha256\":\"sha256:fcd243bd3b780dd1cb46fa0cfb2098fe87d75a4271fd18b1c16629477fbb2871\",\"etag\":\"W/\\\"e8ac9f69598903cba13f914f6711ff00070d52273760a7f5f467647f4a90864a\\\"\",\"schema\":\"rollback-judge.deployment-target.v1\",\"service\":\"rollback-judge-demo\",\"version\":\"2026.07.15.3\",\"health\":\"healthy\",\"signal_kind\":\"error_rate_spike\",\"metric\":{\"name\":\"http_5xx_rate\",\"observed_percent\":0.4,\"threshold_percent\":2,\"window\":\"15m\"},\"incident\":null}}}}\n"
+          }
+        },
+        {
+          "stepId": "release",
+          "status": "succeeded",
+          "attempts": 1,
+          "startedAt": "2026-07-16T14:05:23.820Z",
+          "completedAt": "2026-07-16T14:05:23.820Z",
+          "receiptId": "sha256:f15a7b0e88359b9947495634dfcbe8ef5add99e968be2d0da98595ba0d946cdc",
+          "outputs": {
+            "consumed_gate": {
+              "answer": {
+                "approved": true,
+                "reason": "error_rate_critical"
+              },
+              "approved": true,
+              "command_digest": "sha256:305bcde55d3022237d053a795de901df4dfc389cda5a8b8c2cdafc67a56be044",
+              "consumed": true,
+              "gate_id": "release.publish.approval",
+              "reason": "error_rate_critical"
+            },
+            "raw": "{\"release_execution_result\":{\"rail\":\"mock-release\",\"operation\":\"advance_on_release_publish_approval\",\"gate_id\":\"release.publish.approval\",\"approved\":true,\"action\":\"rollback\",\"target_ref\":\"runx:release:rollback-judge-demo@2026.07.15.3\",\"version\":\"2026.07.15.3\",\"digest\":\"git:ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9\",\"reason\":\"error_rate_critical\",\"source_signal_ref\":\"https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505\",\"consumed\":true,\"advanced\":true,\"command_digest\":\"sha256:305bcde55d3022237d053a795de901df4dfc389cda5a8b8c2cdafc67a56be044\",\"note\":\"Mock release rail consumed release.publish.approval in this same graph run; no deploy API was called.\"},\"release_effect_ref\":\"runx:release:rollback-judge-demo@2026.07.15.3\",\"release_advanced\":true,\"consumed_gate\":{\"gate_id\":\"release.publish.approval\",\"consumed\":true,\"approved\":true,\"reason\":\"error_rate_critical\",\"answer\":{\"approved\":true,\"reason\":\"error_rate_critical\"},\"command_digest\":\"sha256:305bcde55d3022237d053a795de901df4dfc389cda5a8b8c2cdafc67a56be044\"}}\n",
+            "release_advanced": true,
+            "release_effect_ref": "runx:release:rollback-judge-demo@2026.07.15.3",
+            "release_execution_packet": {
+              "data": {
+                "consumed_gate": {
+                  "answer": {
+                    "approved": true,
+                    "reason": "error_rate_critical"
+                  },
+                  "approved": true,
+                  "command_digest": "sha256:305bcde55d3022237d053a795de901df4dfc389cda5a8b8c2cdafc67a56be044",
+                  "consumed": true,
+                  "gate_id": "release.publish.approval",
+                  "reason": "error_rate_critical"
+                },
+                "release_advanced": true,
+                "release_effect_ref": "runx:release:rollback-judge-demo@2026.07.15.3",
+                "release_execution_result": {
+                  "action": "rollback",
+                  "advanced": true,
+                  "approved": true,
+                  "command_digest": "sha256:305bcde55d3022237d053a795de901df4dfc389cda5a8b8c2cdafc67a56be044",
+                  "consumed": true,
+                  "digest": "git:ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9",
+                  "gate_id": "release.publish.approval",
+                  "note": "Mock release rail consumed release.publish.approval in this same graph run; no deploy API was called.",
+                  "operation": "advance_on_release_publish_approval",
+                  "rail": "mock-release",
+                  "reason": "error_rate_critical",
+                  "source_signal_ref": "https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505",
+                  "target_ref": "runx:release:rollback-judge-demo@2026.07.15.3",
+                  "version": "2026.07.15.3"
+                }
+              }
+            },
+            "release_execution_result": {
+              "action": "rollback",
+              "advanced": true,
+              "approved": true,
+              "command_digest": "sha256:305bcde55d3022237d053a795de901df4dfc389cda5a8b8c2cdafc67a56be044",
+              "consumed": true,
+              "digest": "git:ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9",
+              "gate_id": "release.publish.approval",
+              "note": "Mock release rail consumed release.publish.approval in this same graph run; no deploy API was called.",
+              "operation": "advance_on_release_publish_approval",
+              "rail": "mock-release",
+              "reason": "error_rate_critical",
+              "source_signal_ref": "https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505",
+              "target_ref": "runx:release:rollback-judge-demo@2026.07.15.3",
+              "version": "2026.07.15.3"
+            },
+            "skill_claim": {
+              "consumed_gate": {
+                "answer": {
+                  "approved": true,
+                  "reason": "error_rate_critical"
+                },
+                "approved": true,
+                "command_digest": "sha256:305bcde55d3022237d053a795de901df4dfc389cda5a8b8c2cdafc67a56be044",
+                "consumed": true,
+                "gate_id": "release.publish.approval",
+                "reason": "error_rate_critical"
+              },
+              "release_advanced": true,
+              "release_effect_ref": "runx:release:rollback-judge-demo@2026.07.15.3",
+              "release_execution_result": {
+                "action": "rollback",
+                "advanced": true,
+                "approved": true,
+                "command_digest": "sha256:305bcde55d3022237d053a795de901df4dfc389cda5a8b8c2cdafc67a56be044",
+                "consumed": true,
+                "digest": "git:ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9",
+                "gate_id": "release.publish.approval",
+                "note": "Mock release rail consumed release.publish.approval in this same graph run; no deploy API was called.",
+                "operation": "advance_on_release_publish_approval",
+                "rail": "mock-release",
+                "reason": "error_rate_critical",
+                "source_signal_ref": "https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505",
+                "target_ref": "runx:release:rollback-judge-demo@2026.07.15.3",
+                "version": "2026.07.15.3"
+              }
+            },
+            "status": "success",
+            "stderr": "",
+            "stdout": "{\"release_execution_result\":{\"rail\":\"mock-release\",\"operation\":\"advance_on_release_publish_approval\",\"gate_id\":\"release.publish.approval\",\"approved\":true,\"action\":\"rollback\",\"target_ref\":\"runx:release:rollback-judge-demo@2026.07.15.3\",\"version\":\"2026.07.15.3\",\"digest\":\"git:ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9\",\"reason\":\"error_rate_critical\",\"source_signal_ref\":\"https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505\",\"consumed\":true,\"advanced\":true,\"command_digest\":\"sha256:305bcde55d3022237d053a795de901df4dfc389cda5a8b8c2cdafc67a56be044\",\"note\":\"Mock release rail consumed release.publish.approval in this same graph run; no deploy API was called.\"},\"release_effect_ref\":\"runx:release:rollback-judge-demo@2026.07.15.3\",\"release_advanced\":true,\"consumed_gate\":{\"gate_id\":\"release.publish.approval\",\"consumed\":true,\"approved\":true,\"reason\":\"error_rate_critical\",\"answer\":{\"approved\":true,\"reason\":\"error_rate_critical\"},\"command_digest\":\"sha256:305bcde55d3022237d053a795de901df4dfc389cda5a8b8c2cdafc67a56be044\"}}\n"
+          }
+        }
+      ]
+    },
+    "steps": [
+      {
+        "step_id": "decide",
+        "attempt": 1,
+        "skill": "decide",
+        "runner": null,
+        "fanout_group": null,
+        "output": {
+          "status": "Success",
+          "stdout": "{\"act_decision\":\"approve\",\"act_reason\":\"action=rollback reason=error_rate_critical target=2026.07.15.3 source=github-actions:29393017505\",\"act_target_ref\":\"runx:release:rollback-judge-demo@2026.07.15.3\",\"decision\":{\"action\":\"rollback\",\"reason\":\"error_rate_critical\",\"version_target\":{\"version\":\"2026.07.15.3\",\"digest\":\"git:ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9\",\"source\":\"prior_version.source_url\",\"source_url\":\"https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457\",\"deployed_at\":\"2026-07-15T06:01:03Z\"}},\"escalation\":{\"required\":false,\"reason\":null,\"missing_evidence\":[]},\"release_publish_approval\":{\"gate_id\":\"release.publish.approval\",\"approved\":true,\"reason\":\"error_rate_critical\",\"answer\":{\"approved\":true,\"reason\":\"error_rate_critical\"},\"dispatch\":{\"skill\":\"release\",\"answer_key\":\"release.publish.approval\",\"note\":\"Release owns the downstream consequence; rollback-judge performs no deploy effect.\"}},\"review_record\":{\"form\":\"review\",\"signal\":{\"severity\":\"critical\",\"kind\":\"error_rate_spike\"},\"evidence_used\":[\"source_read.current.api_read\",\"source_read.current.deployment_marker.metric\",\"source_read.prior.api_read\",\"source_read.prior.deployment_marker\"],\"refused\":{\"reason\":null}},\"source_read\":{\"current\":{\"provider\":\"github_actions\",\"repository\":\"RYDE-PLAY/frantic-102-rollback-judge\",\"run_id\":29393017505,\"workflow_name\":\"Rollback Judge Deployment Monitor\",\"workflow_path\":\".github/workflows/deployment-monitor.yml\",\"status\":\"completed\",\"conclusion\":\"failure\",\"head_sha\":\"d118cae3bfbe30e1d65d021f8b3ae163166e6041\",\"run_started_at\":\"2026-07-15T06:01:33Z\",\"completed_at\":\"2026-07-15T06:01:43Z\",\"run_url\":\"https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505\",\"api_read\":{\"url\":\"https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505\",\"fetched_at\":\"2026-07-16T14:05:24.914Z\",\"response_sha256\":\"sha256:4f4a6c9b061f43943edfd8a033332eb4bbb3c842ba557419ee3f356fadc60479\",\"etag\":\"W/\\\"f8132214719933f3412b21f13528d3957c27b2d04563ef691e65b284b19d7570\\\"\"},\"deployment_marker\":{\"url\":\"https://raw.githubusercontent.com/RYDE-PLAY/frantic-102-rollback-judge/d118cae3bfbe30e1d65d021f8b3ae163166e6041/public/deploy-target.json\",\"fetched_at\":\"2026-07-16T14:05:25.527Z\",\"response_sha256\":\"sha256:686e0b7c9daf71ca55b4d590ff957b74363e914d61a36c69c5167868e50de963\",\"etag\":\"W/\\\"4d7e6a62fdc185d56f7645501f027144e0ffe902f82a5532daf8e5e65a4e1b74\\\"\",\"schema\":\"rollback-judge.deployment-target.v1\",\"service\":\"rollback-judge-demo\",\"version\":\"2026.07.15.4\",\"health\":\"degraded\",\"signal_kind\":\"error_rate_spike\",\"metric\":{\"name\":\"http_5xx_rate\",\"observed_percent\":18.4,\"threshold_percent\":2,\"window\":\"15m\"},\"incident\":\"post-deploy http_5xx_rate exceeded the release threshold\"}},\"prior\":{\"provider\":\"github_actions\",\"repository\":\"RYDE-PLAY/frantic-102-rollback-judge\",\"run_id\":29392993457,\"workflow_name\":\"Rollback Judge Deployment Monitor\",\"workflow_path\":\".github/workflows/deployment-monitor.yml\",\"status\":\"completed\",\"conclusion\":\"success\",\"head_sha\":\"ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9\",\"run_started_at\":\"2026-07-15T06:01:03Z\",\"completed_at\":\"2026-07-15T06:01:12Z\",\"run_url\":\"https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457\",\"api_read\":{\"url\":\"https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457\",\"fetched_at\":\"2026-07-16T14:05:25.932Z\",\"response_sha256\":\"sha256:d1524cb2041b4eeb5a2e7f97f2355b45db8065d67dfa164a83508243ca09ee4a\",\"etag\":\"W/\\\"e304dde1b134d9bcd1eda46702fbb550e73518a6bc7784e56e8bf31afe08ec53\\\"\"},\"deployment_marker\":{\"url\":\"https://raw.githubusercontent.com/RYDE-PLAY/frantic-102-rollback-judge/ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9/public/deploy-target.json\",\"fetched_at\":\"2026-07-16T14:05:26.283Z\",\"response_sha256\":\"sha256:fcd243bd3b780dd1cb46fa0cfb2098fe87d75a4271fd18b1c16629477fbb2871\",\"etag\":\"W/\\\"e8ac9f69598903cba13f914f6711ff00070d52273760a7f5f467647f4a90864a\\\"\",\"schema\":\"rollback-judge.deployment-target.v1\",\"service\":\"rollback-judge-demo\",\"version\":\"2026.07.15.3\",\"health\":\"healthy\",\"signal_kind\":\"error_rate_spike\",\"metric\":{\"name\":\"http_5xx_rate\",\"observed_percent\":0.4,\"threshold_percent\":2,\"window\":\"15m\"},\"incident\":null}}}}\n",
+          "stderr": "",
+          "exit_code": 0,
+          "duration_ms": 2475,
+          "metadata": {}
+        },
+        "outputs": {
+          "act_decision": "approve",
+          "act_reason": "action=rollback reason=error_rate_critical target=2026.07.15.3 source=github-actions:29393017505",
+          "act_target_ref": "runx:release:rollback-judge-demo@2026.07.15.3",
+          "decision": {
+            "action": "rollback",
+            "reason": "error_rate_critical",
+            "version_target": {
+              "deployed_at": "2026-07-15T06:01:03Z",
+              "digest": "git:ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9",
+              "source": "prior_version.source_url",
+              "source_url": "https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457",
+              "version": "2026.07.15.3"
+            }
+          },
+          "escalation": {
+            "missing_evidence": [],
+            "reason": null,
+            "required": false
+          },
+          "raw": "{\"act_decision\":\"approve\",\"act_reason\":\"action=rollback reason=error_rate_critical target=2026.07.15.3 source=github-actions:29393017505\",\"act_target_ref\":\"runx:release:rollback-judge-demo@2026.07.15.3\",\"decision\":{\"action\":\"rollback\",\"reason\":\"error_rate_critical\",\"version_target\":{\"version\":\"2026.07.15.3\",\"digest\":\"git:ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9\",\"source\":\"prior_version.source_url\",\"source_url\":\"https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457\",\"deployed_at\":\"2026-07-15T06:01:03Z\"}},\"escalation\":{\"required\":false,\"reason\":null,\"missing_evidence\":[]},\"release_publish_approval\":{\"gate_id\":\"release.publish.approval\",\"approved\":true,\"reason\":\"error_rate_critical\",\"answer\":{\"approved\":true,\"reason\":\"error_rate_critical\"},\"dispatch\":{\"skill\":\"release\",\"answer_key\":\"release.publish.approval\",\"note\":\"Release owns the downstream consequence; rollback-judge performs no deploy effect.\"}},\"review_record\":{\"form\":\"review\",\"signal\":{\"severity\":\"critical\",\"kind\":\"error_rate_spike\"},\"evidence_used\":[\"source_read.current.api_read\",\"source_read.current.deployment_marker.metric\",\"source_read.prior.api_read\",\"source_read.prior.deployment_marker\"],\"refused\":{\"reason\":null}},\"source_read\":{\"current\":{\"provider\":\"github_actions\",\"repository\":\"RYDE-PLAY/frantic-102-rollback-judge\",\"run_id\":29393017505,\"workflow_name\":\"Rollback Judge Deployment Monitor\",\"workflow_path\":\".github/workflows/deployment-monitor.yml\",\"status\":\"completed\",\"conclusion\":\"failure\",\"head_sha\":\"d118cae3bfbe30e1d65d021f8b3ae163166e6041\",\"run_started_at\":\"2026-07-15T06:01:33Z\",\"completed_at\":\"2026-07-15T06:01:43Z\",\"run_url\":\"https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505\",\"api_read\":{\"url\":\"https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505\",\"fetched_at\":\"2026-07-16T14:05:24.914Z\",\"response_sha256\":\"sha256:4f4a6c9b061f43943edfd8a033332eb4bbb3c842ba557419ee3f356fadc60479\",\"etag\":\"W/\\\"f8132214719933f3412b21f13528d3957c27b2d04563ef691e65b284b19d7570\\\"\"},\"deployment_marker\":{\"url\":\"https://raw.githubusercontent.com/RYDE-PLAY/frantic-102-rollback-judge/d118cae3bfbe30e1d65d021f8b3ae163166e6041/public/deploy-target.json\",\"fetched_at\":\"2026-07-16T14:05:25.527Z\",\"response_sha256\":\"sha256:686e0b7c9daf71ca55b4d590ff957b74363e914d61a36c69c5167868e50de963\",\"etag\":\"W/\\\"4d7e6a62fdc185d56f7645501f027144e0ffe902f82a5532daf8e5e65a4e1b74\\\"\",\"schema\":\"rollback-judge.deployment-target.v1\",\"service\":\"rollback-judge-demo\",\"version\":\"2026.07.15.4\",\"health\":\"degraded\",\"signal_kind\":\"error_rate_spike\",\"metric\":{\"name\":\"http_5xx_rate\",\"observed_percent\":18.4,\"threshold_percent\":2,\"window\":\"15m\"},\"incident\":\"post-deploy http_5xx_rate exceeded the release threshold\"}},\"prior\":{\"provider\":\"github_actions\",\"repository\":\"RYDE-PLAY/frantic-102-rollback-judge\",\"run_id\":29392993457,\"workflow_name\":\"Rollback Judge Deployment Monitor\",\"workflow_path\":\".github/workflows/deployment-monitor.yml\",\"status\":\"completed\",\"conclusion\":\"success\",\"head_sha\":\"ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9\",\"run_started_at\":\"2026-07-15T06:01:03Z\",\"completed_at\":\"2026-07-15T06:01:12Z\",\"run_url\":\"https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457\",\"api_read\":{\"url\":\"https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457\",\"fetched_at\":\"2026-07-16T14:05:25.932Z\",\"response_sha256\":\"sha256:d1524cb2041b4eeb5a2e7f97f2355b45db8065d67dfa164a83508243ca09ee4a\",\"etag\":\"W/\\\"e304dde1b134d9bcd1eda46702fbb550e73518a6bc7784e56e8bf31afe08ec53\\\"\"},\"deployment_marker\":{\"url\":\"https://raw.githubusercontent.com/RYDE-PLAY/frantic-102-rollback-judge/ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9/public/deploy-target.json\",\"fetched_at\":\"2026-07-16T14:05:26.283Z\",\"response_sha256\":\"sha256:fcd243bd3b780dd1cb46fa0cfb2098fe87d75a4271fd18b1c16629477fbb2871\",\"etag\":\"W/\\\"e8ac9f69598903cba13f914f6711ff00070d52273760a7f5f467647f4a90864a\\\"\",\"schema\":\"rollback-judge.deployment-target.v1\",\"service\":\"rollback-judge-demo\",\"version\":\"2026.07.15.3\",\"health\":\"healthy\",\"signal_kind\":\"error_rate_spike\",\"metric\":{\"name\":\"http_5xx_rate\",\"observed_percent\":0.4,\"threshold_percent\":2,\"window\":\"15m\"},\"incident\":null}}}}\n",
+          "release_publish_approval": {
+            "answer": {
+              "approved": true,
+              "reason": "error_rate_critical"
+            },
+            "approved": true,
+            "dispatch": {
+              "answer_key": "release.publish.approval",
+              "note": "Release owns the downstream consequence; rollback-judge performs no deploy effect.",
+              "skill": "release"
+            },
+            "gate_id": "release.publish.approval",
+            "reason": "error_rate_critical"
+          },
+          "review_record": {
+            "evidence_used": [
+              "source_read.current.api_read",
+              "source_read.current.deployment_marker.metric",
+              "source_read.prior.api_read",
+              "source_read.prior.deployment_marker"
+            ],
+            "form": "review",
+            "refused": {
+              "reason": null
+            },
+            "signal": {
+              "kind": "error_rate_spike",
+              "severity": "critical"
+            }
+          },
+          "rollback_decision_packet": {
+            "data": {
+              "act_decision": "approve",
+              "act_reason": "action=rollback reason=error_rate_critical target=2026.07.15.3 source=github-actions:29393017505",
+              "act_target_ref": "runx:release:rollback-judge-demo@2026.07.15.3",
+              "decision": {
+                "action": "rollback",
+                "reason": "error_rate_critical",
+                "version_target": {
+                  "deployed_at": "2026-07-15T06:01:03Z",
+                  "digest": "git:ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9",
+                  "source": "prior_version.source_url",
+                  "source_url": "https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457",
+                  "version": "2026.07.15.3"
+                }
+              },
+              "escalation": {
+                "missing_evidence": [],
+                "reason": null,
+                "required": false
+              },
+              "release_publish_approval": {
+                "answer": {
+                  "approved": true,
+                  "reason": "error_rate_critical"
+                },
+                "approved": true,
+                "dispatch": {
+                  "answer_key": "release.publish.approval",
+                  "note": "Release owns the downstream consequence; rollback-judge performs no deploy effect.",
+                  "skill": "release"
+                },
+                "gate_id": "release.publish.approval",
+                "reason": "error_rate_critical"
+              },
+              "review_record": {
+                "evidence_used": [
+                  "source_read.current.api_read",
+                  "source_read.current.deployment_marker.metric",
+                  "source_read.prior.api_read",
+                  "source_read.prior.deployment_marker"
+                ],
+                "form": "review",
+                "refused": {
+                  "reason": null
+                },
+                "signal": {
+                  "kind": "error_rate_spike",
+                  "severity": "critical"
+                }
+              },
+              "source_read": {
+                "current": {
+                  "api_read": {
+                    "etag": "W/\"f8132214719933f3412b21f13528d3957c27b2d04563ef691e65b284b19d7570\"",
+                    "fetched_at": "2026-07-16T14:05:24.914Z",
+                    "response_sha256": "sha256:4f4a6c9b061f43943edfd8a033332eb4bbb3c842ba557419ee3f356fadc60479",
+                    "url": "https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505"
+                  },
+                  "completed_at": "2026-07-15T06:01:43Z",
+                  "conclusion": "failure",
+                  "deployment_marker": {
+                    "etag": "W/\"4d7e6a62fdc185d56f7645501f027144e0ffe902f82a5532daf8e5e65a4e1b74\"",
+                    "fetched_at": "2026-07-16T14:05:25.527Z",
+                    "health": "degraded",
+                    "incident": "post-deploy http_5xx_rate exceeded the release threshold",
+                    "metric": {
+                      "name": "http_5xx_rate",
+                      "observed_percent": 18.4,
+                      "threshold_percent": 2,
+                      "window": "15m"
+                    },
+                    "response_sha256": "sha256:686e0b7c9daf71ca55b4d590ff957b74363e914d61a36c69c5167868e50de963",
+                    "schema": "rollback-judge.deployment-target.v1",
+                    "service": "rollback-judge-demo",
+                    "signal_kind": "error_rate_spike",
+                    "url": "https://raw.githubusercontent.com/RYDE-PLAY/frantic-102-rollback-judge/d118cae3bfbe30e1d65d021f8b3ae163166e6041/public/deploy-target.json",
+                    "version": "2026.07.15.4"
+                  },
+                  "head_sha": "d118cae3bfbe30e1d65d021f8b3ae163166e6041",
+                  "provider": "github_actions",
+                  "repository": "RYDE-PLAY/frantic-102-rollback-judge",
+                  "run_id": 29393017505,
+                  "run_started_at": "2026-07-15T06:01:33Z",
+                  "run_url": "https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505",
+                  "status": "completed",
+                  "workflow_name": "Rollback Judge Deployment Monitor",
+                  "workflow_path": ".github/workflows/deployment-monitor.yml"
+                },
+                "prior": {
+                  "api_read": {
+                    "etag": "W/\"e304dde1b134d9bcd1eda46702fbb550e73518a6bc7784e56e8bf31afe08ec53\"",
+                    "fetched_at": "2026-07-16T14:05:25.932Z",
+                    "response_sha256": "sha256:d1524cb2041b4eeb5a2e7f97f2355b45db8065d67dfa164a83508243ca09ee4a",
+                    "url": "https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457"
+                  },
+                  "completed_at": "2026-07-15T06:01:12Z",
+                  "conclusion": "success",
+                  "deployment_marker": {
+                    "etag": "W/\"e8ac9f69598903cba13f914f6711ff00070d52273760a7f5f467647f4a90864a\"",
+                    "fetched_at": "2026-07-16T14:05:26.283Z",
+                    "health": "healthy",
+                    "incident": null,
+                    "metric": {
+                      "name": "http_5xx_rate",
+                      "observed_percent": 0.4,
+                      "threshold_percent": 2,
+                      "window": "15m"
+                    },
+                    "response_sha256": "sha256:fcd243bd3b780dd1cb46fa0cfb2098fe87d75a4271fd18b1c16629477fbb2871",
+                    "schema": "rollback-judge.deployment-target.v1",
+                    "service": "rollback-judge-demo",
+                    "signal_kind": "error_rate_spike",
+                    "url": "https://raw.githubusercontent.com/RYDE-PLAY/frantic-102-rollback-judge/ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9/public/deploy-target.json",
+                    "version": "2026.07.15.3"
+                  },
+                  "head_sha": "ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9",
+                  "provider": "github_actions",
+                  "repository": "RYDE-PLAY/frantic-102-rollback-judge",
+                  "run_id": 29392993457,
+                  "run_started_at": "2026-07-15T06:01:03Z",
+                  "run_url": "https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457",
+                  "status": "completed",
+                  "workflow_name": "Rollback Judge Deployment Monitor",
+                  "workflow_path": ".github/workflows/deployment-monitor.yml"
+                }
+              }
+            }
+          },
+          "skill_claim": {
+            "act_decision": "approve",
+            "act_reason": "action=rollback reason=error_rate_critical target=2026.07.15.3 source=github-actions:29393017505",
+            "act_target_ref": "runx:release:rollback-judge-demo@2026.07.15.3",
+            "decision": {
+              "action": "rollback",
+              "reason": "error_rate_critical",
+              "version_target": {
+                "deployed_at": "2026-07-15T06:01:03Z",
+                "digest": "git:ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9",
+                "source": "prior_version.source_url",
+                "source_url": "https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457",
+                "version": "2026.07.15.3"
+              }
+            },
+            "escalation": {
+              "missing_evidence": [],
+              "reason": null,
+              "required": false
+            },
+            "release_publish_approval": {
+              "answer": {
+                "approved": true,
+                "reason": "error_rate_critical"
+              },
+              "approved": true,
+              "dispatch": {
+                "answer_key": "release.publish.approval",
+                "note": "Release owns the downstream consequence; rollback-judge performs no deploy effect.",
+                "skill": "release"
+              },
+              "gate_id": "release.publish.approval",
+              "reason": "error_rate_critical"
+            },
+            "review_record": {
+              "evidence_used": [
+                "source_read.current.api_read",
+                "source_read.current.deployment_marker.metric",
+                "source_read.prior.api_read",
+                "source_read.prior.deployment_marker"
+              ],
+              "form": "review",
+              "refused": {
+                "reason": null
+              },
+              "signal": {
+                "kind": "error_rate_spike",
+                "severity": "critical"
+              }
+            },
+            "source_read": {
+              "current": {
+                "api_read": {
+                  "etag": "W/\"f8132214719933f3412b21f13528d3957c27b2d04563ef691e65b284b19d7570\"",
+                  "fetched_at": "2026-07-16T14:05:24.914Z",
+                  "response_sha256": "sha256:4f4a6c9b061f43943edfd8a033332eb4bbb3c842ba557419ee3f356fadc60479",
+                  "url": "https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505"
+                },
+                "completed_at": "2026-07-15T06:01:43Z",
+                "conclusion": "failure",
+                "deployment_marker": {
+                  "etag": "W/\"4d7e6a62fdc185d56f7645501f027144e0ffe902f82a5532daf8e5e65a4e1b74\"",
+                  "fetched_at": "2026-07-16T14:05:25.527Z",
+                  "health": "degraded",
+                  "incident": "post-deploy http_5xx_rate exceeded the release threshold",
+                  "metric": {
+                    "name": "http_5xx_rate",
+                    "observed_percent": 18.4,
+                    "threshold_percent": 2,
+                    "window": "15m"
+                  },
+                  "response_sha256": "sha256:686e0b7c9daf71ca55b4d590ff957b74363e914d61a36c69c5167868e50de963",
+                  "schema": "rollback-judge.deployment-target.v1",
+                  "service": "rollback-judge-demo",
+                  "signal_kind": "error_rate_spike",
+                  "url": "https://raw.githubusercontent.com/RYDE-PLAY/frantic-102-rollback-judge/d118cae3bfbe30e1d65d021f8b3ae163166e6041/public/deploy-target.json",
+                  "version": "2026.07.15.4"
+                },
+                "head_sha": "d118cae3bfbe30e1d65d021f8b3ae163166e6041",
+                "provider": "github_actions",
+                "repository": "RYDE-PLAY/frantic-102-rollback-judge",
+                "run_id": 29393017505,
+                "run_started_at": "2026-07-15T06:01:33Z",
+                "run_url": "https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505",
+                "status": "completed",
+                "workflow_name": "Rollback Judge Deployment Monitor",
+                "workflow_path": ".github/workflows/deployment-monitor.yml"
+              },
+              "prior": {
+                "api_read": {
+                  "etag": "W/\"e304dde1b134d9bcd1eda46702fbb550e73518a6bc7784e56e8bf31afe08ec53\"",
+                  "fetched_at": "2026-07-16T14:05:25.932Z",
+                  "response_sha256": "sha256:d1524cb2041b4eeb5a2e7f97f2355b45db8065d67dfa164a83508243ca09ee4a",
+                  "url": "https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457"
+                },
+                "completed_at": "2026-07-15T06:01:12Z",
+                "conclusion": "success",
+                "deployment_marker": {
+                  "etag": "W/\"e8ac9f69598903cba13f914f6711ff00070d52273760a7f5f467647f4a90864a\"",
+                  "fetched_at": "2026-07-16T14:05:26.283Z",
+                  "health": "healthy",
+                  "incident": null,
+                  "metric": {
+                    "name": "http_5xx_rate",
+                    "observed_percent": 0.4,
+                    "threshold_percent": 2,
+                    "window": "15m"
+                  },
+                  "response_sha256": "sha256:fcd243bd3b780dd1cb46fa0cfb2098fe87d75a4271fd18b1c16629477fbb2871",
+                  "schema": "rollback-judge.deployment-target.v1",
+                  "service": "rollback-judge-demo",
+                  "signal_kind": "error_rate_spike",
+                  "url": "https://raw.githubusercontent.com/RYDE-PLAY/frantic-102-rollback-judge/ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9/public/deploy-target.json",
+                  "version": "2026.07.15.3"
+                },
+                "head_sha": "ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9",
+                "provider": "github_actions",
+                "repository": "RYDE-PLAY/frantic-102-rollback-judge",
+                "run_id": 29392993457,
+                "run_started_at": "2026-07-15T06:01:03Z",
+                "run_url": "https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457",
+                "status": "completed",
+                "workflow_name": "Rollback Judge Deployment Monitor",
+                "workflow_path": ".github/workflows/deployment-monitor.yml"
+              }
+            }
+          },
+          "source_read": {
+            "current": {
+              "api_read": {
+                "etag": "W/\"f8132214719933f3412b21f13528d3957c27b2d04563ef691e65b284b19d7570\"",
+                "fetched_at": "2026-07-16T14:05:24.914Z",
+                "response_sha256": "sha256:4f4a6c9b061f43943edfd8a033332eb4bbb3c842ba557419ee3f356fadc60479",
+                "url": "https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505"
+              },
+              "completed_at": "2026-07-15T06:01:43Z",
+              "conclusion": "failure",
+              "deployment_marker": {
+                "etag": "W/\"4d7e6a62fdc185d56f7645501f027144e0ffe902f82a5532daf8e5e65a4e1b74\"",
+                "fetched_at": "2026-07-16T14:05:25.527Z",
+                "health": "degraded",
+                "incident": "post-deploy http_5xx_rate exceeded the release threshold",
+                "metric": {
+                  "name": "http_5xx_rate",
+                  "observed_percent": 18.4,
+                  "threshold_percent": 2,
+                  "window": "15m"
+                },
+                "response_sha256": "sha256:686e0b7c9daf71ca55b4d590ff957b74363e914d61a36c69c5167868e50de963",
+                "schema": "rollback-judge.deployment-target.v1",
+                "service": "rollback-judge-demo",
+                "signal_kind": "error_rate_spike",
+                "url": "https://raw.githubusercontent.com/RYDE-PLAY/frantic-102-rollback-judge/d118cae3bfbe30e1d65d021f8b3ae163166e6041/public/deploy-target.json",
+                "version": "2026.07.15.4"
+              },
+              "head_sha": "d118cae3bfbe30e1d65d021f8b3ae163166e6041",
+              "provider": "github_actions",
+              "repository": "RYDE-PLAY/frantic-102-rollback-judge",
+              "run_id": 29393017505,
+              "run_started_at": "2026-07-15T06:01:33Z",
+              "run_url": "https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505",
+              "status": "completed",
+              "workflow_name": "Rollback Judge Deployment Monitor",
+              "workflow_path": ".github/workflows/deployment-monitor.yml"
+            },
+            "prior": {
+              "api_read": {
+                "etag": "W/\"e304dde1b134d9bcd1eda46702fbb550e73518a6bc7784e56e8bf31afe08ec53\"",
+                "fetched_at": "2026-07-16T14:05:25.932Z",
+                "response_sha256": "sha256:d1524cb2041b4eeb5a2e7f97f2355b45db8065d67dfa164a83508243ca09ee4a",
+                "url": "https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457"
+              },
+              "completed_at": "2026-07-15T06:01:12Z",
+              "conclusion": "success",
+              "deployment_marker": {
+                "etag": "W/\"e8ac9f69598903cba13f914f6711ff00070d52273760a7f5f467647f4a90864a\"",
+                "fetched_at": "2026-07-16T14:05:26.283Z",
+                "health": "healthy",
+                "incident": null,
+                "metric": {
+                  "name": "http_5xx_rate",
+                  "observed_percent": 0.4,
+                  "threshold_percent": 2,
+                  "window": "15m"
+                },
+                "response_sha256": "sha256:fcd243bd3b780dd1cb46fa0cfb2098fe87d75a4271fd18b1c16629477fbb2871",
+                "schema": "rollback-judge.deployment-target.v1",
+                "service": "rollback-judge-demo",
+                "signal_kind": "error_rate_spike",
+                "url": "https://raw.githubusercontent.com/RYDE-PLAY/frantic-102-rollback-judge/ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9/public/deploy-target.json",
+                "version": "2026.07.15.3"
+              },
+              "head_sha": "ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9",
+              "provider": "github_actions",
+              "repository": "RYDE-PLAY/frantic-102-rollback-judge",
+              "run_id": 29392993457,
+              "run_started_at": "2026-07-15T06:01:03Z",
+              "run_url": "https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457",
+              "status": "completed",
+              "workflow_name": "Rollback Judge Deployment Monitor",
+              "workflow_path": ".github/workflows/deployment-monitor.yml"
+            }
+          },
+          "status": "success",
+          "stderr": "",
+          "stdout": "{\"act_decision\":\"approve\",\"act_reason\":\"action=rollback reason=error_rate_critical target=2026.07.15.3 source=github-actions:29393017505\",\"act_target_ref\":\"runx:release:rollback-judge-demo@2026.07.15.3\",\"decision\":{\"action\":\"rollback\",\"reason\":\"error_rate_critical\",\"version_target\":{\"version\":\"2026.07.15.3\",\"digest\":\"git:ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9\",\"source\":\"prior_version.source_url\",\"source_url\":\"https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457\",\"deployed_at\":\"2026-07-15T06:01:03Z\"}},\"escalation\":{\"required\":false,\"reason\":null,\"missing_evidence\":[]},\"release_publish_approval\":{\"gate_id\":\"release.publish.approval\",\"approved\":true,\"reason\":\"error_rate_critical\",\"answer\":{\"approved\":true,\"reason\":\"error_rate_critical\"},\"dispatch\":{\"skill\":\"release\",\"answer_key\":\"release.publish.approval\",\"note\":\"Release owns the downstream consequence; rollback-judge performs no deploy effect.\"}},\"review_record\":{\"form\":\"review\",\"signal\":{\"severity\":\"critical\",\"kind\":\"error_rate_spike\"},\"evidence_used\":[\"source_read.current.api_read\",\"source_read.current.deployment_marker.metric\",\"source_read.prior.api_read\",\"source_read.prior.deployment_marker\"],\"refused\":{\"reason\":null}},\"source_read\":{\"current\":{\"provider\":\"github_actions\",\"repository\":\"RYDE-PLAY/frantic-102-rollback-judge\",\"run_id\":29393017505,\"workflow_name\":\"Rollback Judge Deployment Monitor\",\"workflow_path\":\".github/workflows/deployment-monitor.yml\",\"status\":\"completed\",\"conclusion\":\"failure\",\"head_sha\":\"d118cae3bfbe30e1d65d021f8b3ae163166e6041\",\"run_started_at\":\"2026-07-15T06:01:33Z\",\"completed_at\":\"2026-07-15T06:01:43Z\",\"run_url\":\"https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505\",\"api_read\":{\"url\":\"https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505\",\"fetched_at\":\"2026-07-16T14:05:24.914Z\",\"response_sha256\":\"sha256:4f4a6c9b061f43943edfd8a033332eb4bbb3c842ba557419ee3f356fadc60479\",\"etag\":\"W/\\\"f8132214719933f3412b21f13528d3957c27b2d04563ef691e65b284b19d7570\\\"\"},\"deployment_marker\":{\"url\":\"https://raw.githubusercontent.com/RYDE-PLAY/frantic-102-rollback-judge/d118cae3bfbe30e1d65d021f8b3ae163166e6041/public/deploy-target.json\",\"fetched_at\":\"2026-07-16T14:05:25.527Z\",\"response_sha256\":\"sha256:686e0b7c9daf71ca55b4d590ff957b74363e914d61a36c69c5167868e50de963\",\"etag\":\"W/\\\"4d7e6a62fdc185d56f7645501f027144e0ffe902f82a5532daf8e5e65a4e1b74\\\"\",\"schema\":\"rollback-judge.deployment-target.v1\",\"service\":\"rollback-judge-demo\",\"version\":\"2026.07.15.4\",\"health\":\"degraded\",\"signal_kind\":\"error_rate_spike\",\"metric\":{\"name\":\"http_5xx_rate\",\"observed_percent\":18.4,\"threshold_percent\":2,\"window\":\"15m\"},\"incident\":\"post-deploy http_5xx_rate exceeded the release threshold\"}},\"prior\":{\"provider\":\"github_actions\",\"repository\":\"RYDE-PLAY/frantic-102-rollback-judge\",\"run_id\":29392993457,\"workflow_name\":\"Rollback Judge Deployment Monitor\",\"workflow_path\":\".github/workflows/deployment-monitor.yml\",\"status\":\"completed\",\"conclusion\":\"success\",\"head_sha\":\"ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9\",\"run_started_at\":\"2026-07-15T06:01:03Z\",\"completed_at\":\"2026-07-15T06:01:12Z\",\"run_url\":\"https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457\",\"api_read\":{\"url\":\"https://api.github.com/repos/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29392993457\",\"fetched_at\":\"2026-07-16T14:05:25.932Z\",\"response_sha256\":\"sha256:d1524cb2041b4eeb5a2e7f97f2355b45db8065d67dfa164a83508243ca09ee4a\",\"etag\":\"W/\\\"e304dde1b134d9bcd1eda46702fbb550e73518a6bc7784e56e8bf31afe08ec53\\\"\"},\"deployment_marker\":{\"url\":\"https://raw.githubusercontent.com/RYDE-PLAY/frantic-102-rollback-judge/ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9/public/deploy-target.json\",\"fetched_at\":\"2026-07-16T14:05:26.283Z\",\"response_sha256\":\"sha256:fcd243bd3b780dd1cb46fa0cfb2098fe87d75a4271fd18b1c16629477fbb2871\",\"etag\":\"W/\\\"e8ac9f69598903cba13f914f6711ff00070d52273760a7f5f467647f4a90864a\\\"\",\"schema\":\"rollback-judge.deployment-target.v1\",\"service\":\"rollback-judge-demo\",\"version\":\"2026.07.15.3\",\"health\":\"healthy\",\"signal_kind\":\"error_rate_spike\",\"metric\":{\"name\":\"http_5xx_rate\",\"observed_percent\":0.4,\"threshold_percent\":2,\"window\":\"15m\"},\"incident\":null}}}}\n"
+        },
+        "receipt": {
+          "schema": "runx.receipt.v1",
+          "id": "sha256:e1c3b484145a07ec048aa4c4ed5f870310558873661b1d39dfdae61120ed7167",
+          "created_at": "2026-07-16T14:05:23.820Z",
+          "canonicalization": "runx.receipt.c14n.v1",
+          "issuer": {
+            "type": "hosted",
+            "kid": "frantic-102-bde8c3b9991f",
+            "public_key_sha256": "sha256:cb627e44b72711351b41ebe15e5970c2895f0def15880da4ced8e8a5236de0da"
+          },
+          "signature": {
+            "alg": "Ed25519",
+            "value": "base64:d8Jzxy_NRsiO68fajxMsInBWu2RaxRFmEooIVI_u-m5BTI5SQ8HHG1_lfalg7Lua_YNcgHq4kUa3sZ2XKfIRAQ"
+          },
+          "digest": "sha256:45aa2075c7839e3e4fea08618ead89d0df72eb0506f780a159a5227cab736b9e",
+          "idempotency": {
+            "intent_key": "sha256:rollback-judge-decide-intent",
+            "trigger_fingerprint": "sha256:rollback-judge-decide-trigger",
+            "content_hash": "sha256:rollback-judge-decide-content"
+          },
+          "subject": {
+            "kind": "skill",
+            "ref": {
+              "type": "harness",
+              "uri": "hrn_rollback-judge_decide"
+            },
+            "commitments": []
+          },
+          "authority": {
+            "actor_ref": {
+              "type": "principal",
+              "uri": "runx:principal:local_runtime"
+            },
+            "grant_refs": [],
+            "scope_refs": [],
+            "authority_proof_refs": [],
+            "attenuation": {
+              "parent_authority_ref": null,
+              "subset_proof": null
+            },
+            "terms": [],
+            "enforcement": {
+              "profile_hash": "sha256:635fdb0a7eef93911e3c6bd0b25b5e635edba32e0259133042b3a5f1fb19394e",
+              "redaction_refs": [],
+              "setup_refs": [],
+              "teardown_refs": []
+            }
+          },
+          "signals": [],
+          "decisions": [
+            {
+              "decision_id": "dec_decide",
+              "choice": "open",
+              "inputs": {
+                "signal_refs": [],
+                "target_ref": null,
+                "opportunity_refs": [],
+                "selection_ref": null
+              },
+              "proposed_intent": {
+                "purpose": "Open runtime node decide",
+                "legitimacy": "Local graph execution requested this node",
+                "success_criteria": [],
+                "constraints": [],
+                "derived_from": []
+              },
+              "selected_act_id": "act_decide",
+              "selected_harness_ref": null,
+              "justification": {
+                "summary": "runtime graph planner selected this node",
+                "evidence_refs": []
+              },
+              "closure": null,
+              "artifact_refs": []
+            }
+          ],
+          "acts": [
+            {
+              "id": "act_decide",
+              "form": "observation",
+              "intent": {
+                "purpose": "Run graph step decide",
+                "legitimacy": "Runtime graph execution was admitted by the local harness",
+                "success_criteria": [
+                  {
+                    "criterion_id": "process_exit",
+                    "statement": "cli-tool exits successfully",
+                    "required": true
+                  }
+                ],
+                "constraints": [],
+                "derived_from": []
+              },
+              "summary": "Executed graph step decide",
+              "criterion_bindings": [
+                {
+                  "criterion_id": "process_exit",
+                  "status": "verified",
+                  "evidence_refs": [],
+                  "verification_refs": [],
+                  "summary": "cli-tool exited successfully"
+                }
+              ],
+              "source_refs": [],
+              "target_refs": [],
+              "artifact_refs": [],
+              "closure": {
+                "disposition": "closed",
+                "reason_code": "process_exit",
+                "summary": "cli-tool exited successfully",
+                "closed_at": "2026-07-16T14:05:23.820Z"
+              }
+            }
+          ],
+          "seal": {
+            "disposition": "closed",
+            "reason_code": "process_closed",
+            "summary": "step decide completed",
+            "closed_at": "2026-07-16T14:05:23.820Z",
+            "last_observed_at": "2026-07-16T14:05:23.820Z",
+            "criteria": [
+              {
+                "criterion_id": "process_exit",
+                "status": "verified",
+                "evidence_refs": [],
+                "verification_refs": [],
+                "summary": "cli-tool exited successfully"
+              }
+            ]
+          },
+          "lineage": {
+            "children": [],
+            "sync": []
+          }
+        },
+        "admission_witness": {
+          "stepId": "decide",
+          "receiptId": "sha256:e1c3b484145a07ec048aa4c4ed5f870310558873661b1d39dfdae61120ed7167"
+        }
+      },
+      {
+        "step_id": "release",
+        "attempt": 1,
+        "skill": "release",
+        "runner": null,
+        "fanout_group": null,
+        "output": {
+          "status": "Success",
+          "stdout": "{\"release_execution_result\":{\"rail\":\"mock-release\",\"operation\":\"advance_on_release_publish_approval\",\"gate_id\":\"release.publish.approval\",\"approved\":true,\"action\":\"rollback\",\"target_ref\":\"runx:release:rollback-judge-demo@2026.07.15.3\",\"version\":\"2026.07.15.3\",\"digest\":\"git:ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9\",\"reason\":\"error_rate_critical\",\"source_signal_ref\":\"https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505\",\"consumed\":true,\"advanced\":true,\"command_digest\":\"sha256:305bcde55d3022237d053a795de901df4dfc389cda5a8b8c2cdafc67a56be044\",\"note\":\"Mock release rail consumed release.publish.approval in this same graph run; no deploy API was called.\"},\"release_effect_ref\":\"runx:release:rollback-judge-demo@2026.07.15.3\",\"release_advanced\":true,\"consumed_gate\":{\"gate_id\":\"release.publish.approval\",\"consumed\":true,\"approved\":true,\"reason\":\"error_rate_critical\",\"answer\":{\"approved\":true,\"reason\":\"error_rate_critical\"},\"command_digest\":\"sha256:305bcde55d3022237d053a795de901df4dfc389cda5a8b8c2cdafc67a56be044\"}}\n",
+          "stderr": "",
+          "exit_code": 0,
+          "duration_ms": 119,
+          "metadata": {}
+        },
+        "outputs": {
+          "consumed_gate": {
+            "answer": {
+              "approved": true,
+              "reason": "error_rate_critical"
+            },
+            "approved": true,
+            "command_digest": "sha256:305bcde55d3022237d053a795de901df4dfc389cda5a8b8c2cdafc67a56be044",
+            "consumed": true,
+            "gate_id": "release.publish.approval",
+            "reason": "error_rate_critical"
+          },
+          "raw": "{\"release_execution_result\":{\"rail\":\"mock-release\",\"operation\":\"advance_on_release_publish_approval\",\"gate_id\":\"release.publish.approval\",\"approved\":true,\"action\":\"rollback\",\"target_ref\":\"runx:release:rollback-judge-demo@2026.07.15.3\",\"version\":\"2026.07.15.3\",\"digest\":\"git:ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9\",\"reason\":\"error_rate_critical\",\"source_signal_ref\":\"https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505\",\"consumed\":true,\"advanced\":true,\"command_digest\":\"sha256:305bcde55d3022237d053a795de901df4dfc389cda5a8b8c2cdafc67a56be044\",\"note\":\"Mock release rail consumed release.publish.approval in this same graph run; no deploy API was called.\"},\"release_effect_ref\":\"runx:release:rollback-judge-demo@2026.07.15.3\",\"release_advanced\":true,\"consumed_gate\":{\"gate_id\":\"release.publish.approval\",\"consumed\":true,\"approved\":true,\"reason\":\"error_rate_critical\",\"answer\":{\"approved\":true,\"reason\":\"error_rate_critical\"},\"command_digest\":\"sha256:305bcde55d3022237d053a795de901df4dfc389cda5a8b8c2cdafc67a56be044\"}}\n",
+          "release_advanced": true,
+          "release_effect_ref": "runx:release:rollback-judge-demo@2026.07.15.3",
+          "release_execution_packet": {
+            "data": {
+              "consumed_gate": {
+                "answer": {
+                  "approved": true,
+                  "reason": "error_rate_critical"
+                },
+                "approved": true,
+                "command_digest": "sha256:305bcde55d3022237d053a795de901df4dfc389cda5a8b8c2cdafc67a56be044",
+                "consumed": true,
+                "gate_id": "release.publish.approval",
+                "reason": "error_rate_critical"
+              },
+              "release_advanced": true,
+              "release_effect_ref": "runx:release:rollback-judge-demo@2026.07.15.3",
+              "release_execution_result": {
+                "action": "rollback",
+                "advanced": true,
+                "approved": true,
+                "command_digest": "sha256:305bcde55d3022237d053a795de901df4dfc389cda5a8b8c2cdafc67a56be044",
+                "consumed": true,
+                "digest": "git:ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9",
+                "gate_id": "release.publish.approval",
+                "note": "Mock release rail consumed release.publish.approval in this same graph run; no deploy API was called.",
+                "operation": "advance_on_release_publish_approval",
+                "rail": "mock-release",
+                "reason": "error_rate_critical",
+                "source_signal_ref": "https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505",
+                "target_ref": "runx:release:rollback-judge-demo@2026.07.15.3",
+                "version": "2026.07.15.3"
+              }
+            }
+          },
+          "release_execution_result": {
+            "action": "rollback",
+            "advanced": true,
+            "approved": true,
+            "command_digest": "sha256:305bcde55d3022237d053a795de901df4dfc389cda5a8b8c2cdafc67a56be044",
+            "consumed": true,
+            "digest": "git:ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9",
+            "gate_id": "release.publish.approval",
+            "note": "Mock release rail consumed release.publish.approval in this same graph run; no deploy API was called.",
+            "operation": "advance_on_release_publish_approval",
+            "rail": "mock-release",
+            "reason": "error_rate_critical",
+            "source_signal_ref": "https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505",
+            "target_ref": "runx:release:rollback-judge-demo@2026.07.15.3",
+            "version": "2026.07.15.3"
+          },
+          "skill_claim": {
+            "consumed_gate": {
+              "answer": {
+                "approved": true,
+                "reason": "error_rate_critical"
+              },
+              "approved": true,
+              "command_digest": "sha256:305bcde55d3022237d053a795de901df4dfc389cda5a8b8c2cdafc67a56be044",
+              "consumed": true,
+              "gate_id": "release.publish.approval",
+              "reason": "error_rate_critical"
+            },
+            "release_advanced": true,
+            "release_effect_ref": "runx:release:rollback-judge-demo@2026.07.15.3",
+            "release_execution_result": {
+              "action": "rollback",
+              "advanced": true,
+              "approved": true,
+              "command_digest": "sha256:305bcde55d3022237d053a795de901df4dfc389cda5a8b8c2cdafc67a56be044",
+              "consumed": true,
+              "digest": "git:ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9",
+              "gate_id": "release.publish.approval",
+              "note": "Mock release rail consumed release.publish.approval in this same graph run; no deploy API was called.",
+              "operation": "advance_on_release_publish_approval",
+              "rail": "mock-release",
+              "reason": "error_rate_critical",
+              "source_signal_ref": "https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505",
+              "target_ref": "runx:release:rollback-judge-demo@2026.07.15.3",
+              "version": "2026.07.15.3"
+            }
+          },
+          "status": "success",
+          "stderr": "",
+          "stdout": "{\"release_execution_result\":{\"rail\":\"mock-release\",\"operation\":\"advance_on_release_publish_approval\",\"gate_id\":\"release.publish.approval\",\"approved\":true,\"action\":\"rollback\",\"target_ref\":\"runx:release:rollback-judge-demo@2026.07.15.3\",\"version\":\"2026.07.15.3\",\"digest\":\"git:ab4d82d0f136bd4e5d3d9c7b2e1811e9a17005c9\",\"reason\":\"error_rate_critical\",\"source_signal_ref\":\"https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505\",\"consumed\":true,\"advanced\":true,\"command_digest\":\"sha256:305bcde55d3022237d053a795de901df4dfc389cda5a8b8c2cdafc67a56be044\",\"note\":\"Mock release rail consumed release.publish.approval in this same graph run; no deploy API was called.\"},\"release_effect_ref\":\"runx:release:rollback-judge-demo@2026.07.15.3\",\"release_advanced\":true,\"consumed_gate\":{\"gate_id\":\"release.publish.approval\",\"consumed\":true,\"approved\":true,\"reason\":\"error_rate_critical\",\"answer\":{\"approved\":true,\"reason\":\"error_rate_critical\"},\"command_digest\":\"sha256:305bcde55d3022237d053a795de901df4dfc389cda5a8b8c2cdafc67a56be044\"}}\n"
+        },
+        "receipt": {
+          "schema": "runx.receipt.v1",
+          "id": "sha256:f15a7b0e88359b9947495634dfcbe8ef5add99e968be2d0da98595ba0d946cdc",
+          "created_at": "2026-07-16T14:05:23.820Z",
+          "canonicalization": "runx.receipt.c14n.v1",
+          "issuer": {
+            "type": "hosted",
+            "kid": "frantic-102-bde8c3b9991f",
+            "public_key_sha256": "sha256:cb627e44b72711351b41ebe15e5970c2895f0def15880da4ced8e8a5236de0da"
+          },
+          "signature": {
+            "alg": "Ed25519",
+            "value": "base64:LP3HxrJT7gXh6cf8SWe5HepYTnCbGaM1R3o4Rigrtdc83lY5vQBFg05L1AHb90SVFiwnjQGBUP5KLkSlMm9RBg"
+          },
+          "digest": "sha256:c5f4195ff22b1a33fb665224937575e1ba0e8a2b755da742022ce56c4058efe7",
+          "idempotency": {
+            "intent_key": "sha256:rollback-judge-release-intent",
+            "trigger_fingerprint": "sha256:rollback-judge-release-trigger",
+            "content_hash": "sha256:rollback-judge-release-content"
+          },
+          "subject": {
+            "kind": "skill",
+            "ref": {
+              "type": "harness",
+              "uri": "hrn_rollback-judge_release"
+            },
+            "commitments": []
+          },
+          "authority": {
+            "actor_ref": {
+              "type": "principal",
+              "uri": "runx:principal:local_runtime"
+            },
+            "grant_refs": [],
+            "scope_refs": [],
+            "authority_proof_refs": [],
+            "attenuation": {
+              "parent_authority_ref": null,
+              "subset_proof": null
+            },
+            "terms": [],
+            "enforcement": {
+              "profile_hash": "sha256:635fdb0a7eef93911e3c6bd0b25b5e635edba32e0259133042b3a5f1fb19394e",
+              "redaction_refs": [],
+              "setup_refs": [],
+              "teardown_refs": []
+            }
+          },
+          "signals": [],
+          "decisions": [
+            {
+              "decision_id": "dec_release",
+              "choice": "open",
+              "inputs": {
+                "signal_refs": [],
+                "target_ref": null,
+                "opportunity_refs": [],
+                "selection_ref": null
+              },
+              "proposed_intent": {
+                "purpose": "Open runtime node release",
+                "legitimacy": "Local graph execution requested this node",
+                "success_criteria": [],
+                "constraints": [],
+                "derived_from": []
+              },
+              "selected_act_id": "act_release",
+              "selected_harness_ref": null,
+              "justification": {
+                "summary": "runtime graph planner selected this node",
+                "evidence_refs": []
+              },
+              "closure": null,
+              "artifact_refs": []
+            }
+          ],
+          "acts": [
+            {
+              "id": "act_release",
+              "form": "observation",
+              "intent": {
+                "purpose": "Run graph step release",
+                "legitimacy": "Runtime graph execution was admitted by the local harness",
+                "success_criteria": [
+                  {
+                    "criterion_id": "process_exit",
+                    "statement": "cli-tool exits successfully",
+                    "required": true
+                  }
+                ],
+                "constraints": [],
+                "derived_from": []
+              },
+              "summary": "Executed graph step release",
+              "criterion_bindings": [
+                {
+                  "criterion_id": "process_exit",
+                  "status": "verified",
+                  "evidence_refs": [],
+                  "verification_refs": [],
+                  "summary": "cli-tool exited successfully"
+                }
+              ],
+              "source_refs": [],
+              "target_refs": [],
+              "artifact_refs": [],
+              "closure": {
+                "disposition": "closed",
+                "reason_code": "process_exit",
+                "summary": "cli-tool exited successfully",
+                "closed_at": "2026-07-16T14:05:23.820Z"
+              }
+            }
+          ],
+          "seal": {
+            "disposition": "closed",
+            "reason_code": "process_closed",
+            "summary": "step release completed",
+            "closed_at": "2026-07-16T14:05:23.820Z",
+            "last_observed_at": "2026-07-16T14:05:23.820Z",
+            "criteria": [
+              {
+                "criterion_id": "process_exit",
+                "status": "verified",
+                "evidence_refs": [],
+                "verification_refs": [],
+                "summary": "cli-tool exited successfully"
+              }
+            ]
+          },
+          "lineage": {
+            "children": [],
+            "sync": []
+          }
+        },
+        "admission_witness": {
+          "stepId": "release",
+          "receiptId": "sha256:f15a7b0e88359b9947495634dfcbe8ef5add99e968be2d0da98595ba0d946cdc"
+        }
+      }
+    ],
+    "sync_points": [],
+    "journal": {
+      "entries": [
+        {
+          "event": {
+            "type": "step_started",
+            "message": "step decide started",
+            "data": {
+              "act_id": "act_decide",
+              "kind": "act_started",
+              "step_id": "decide"
+            }
+          }
+        },
+        {
+          "event": {
+            "type": "step_completed",
+            "message": "step decide completed",
+            "data": {
+              "act_id": "act_decide",
+              "disposition": "closed",
+              "kind": "act_closed",
+              "step_id": "decide"
+            }
+          }
+        },
+        {
+          "event": {
+            "type": "step_started",
+            "message": "step release started",
+            "data": {
+              "act_id": "act_release",
+              "kind": "act_started",
+              "step_id": "release"
+            }
+          }
+        },
+        {
+          "event": {
+            "type": "step_completed",
+            "message": "step release completed",
+            "data": {
+              "act_id": "act_release",
+              "disposition": "closed",
+              "kind": "act_closed",
+              "step_id": "release"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

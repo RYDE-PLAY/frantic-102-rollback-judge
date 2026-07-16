@@ -1,138 +1,42 @@
 {
-  "schema": "frantic.verification.v1",
-  "bounty": 102,
-  "package": "ryde-play/rollback-judge@sha-243da363bf91",
-  "public_url": "https://runx.ai/x/ryde-play/rollback-judge@sha-243da363bf91",
-  "source_url": "https://github.com/RYDE-PLAY/runx/tree/87cc5e211e12343f9c91aaf03a90c1dbaeab85b7/skills/rollback-judge",
-  "source_commit": "87cc5e211e12343f9c91aaf03a90c1dbaeab85b7",
-  "pr_url": "https://github.com/runxhq/runx/pull/277",
-  "x_yaml": "https://raw.githubusercontent.com/RYDE-PLAY/runx/87cc5e211e12343f9c91aaf03a90c1dbaeab85b7/skills/rollback-judge/X.yaml",
-  "skill_md": "https://raw.githubusercontent.com/RYDE-PLAY/runx/87cc5e211e12343f9c91aaf03a90c1dbaeab85b7/skills/rollback-judge/SKILL.md",
-  "runx_cli_version": "runx-cli 0.6.14",
-  "registry": {
-    "status": "published",
-    "owner": "ryde-play",
-    "version": "sha-243da363bf91",
-    "digest": "sha256:51bee5d21c036bf7c6a375ddce84b5a9385b011cd9295a83a8dc134e71917e5f",
-    "profile_digest": "sha256:278867049b04b931145c20c7f417ea44f74158262f61fa7b75ea1ec3bbfbc495",
-    "registry_read": "registry-read.json",
-    "publish_result": "publish.json"
+  "schema": "frantic.rollback_judge.verification.v4",
+  "task": 102,
+  "package": "ryde-play/rollback-judge@sha-90245faf0359",
+  "source_commit": "06ee7dd89afbc09e7271fac50bf6429c97733c8f",
+  "receipt_ref": "runx:receipt:sha256:dd5855ab09e05e30fb2b4218126a594fd3989669802d7422cf877ae7bba95a41",
+  "receipt_id": "sha256:dd5855ab09e05e30fb2b4218126a594fd3989669802d7422cf877ae7bba95a41",
+  "run_id": "run_judge_7f0575971c1b",
+  "runx_verify_valid": true,
+  "signature": {
+    "mode": "production",
+    "status": "valid",
+    "kid": "frantic-102-bde8c3b9991f"
   },
-  "install": {
-    "status": "installed",
-    "ref": "ryde-play/rollback-judge@sha-243da363bf91",
-    "runner_names": [
-      "agent_review",
-      "judge"
-    ],
-    "result": "runx-add.json"
+  "findings": [],
+  "release_effect": {
+    "same_graph_run": true,
+    "decide_receipt_id": "sha256:e1c3b484145a07ec048aa4c4ed5f870310558873661b1d39dfdae61120ed7167",
+    "release_receipt_id": "sha256:f15a7b0e88359b9947495634dfcbe8ef5add99e968be2d0da98595ba0d946cdc",
+    "consumed_release_publish_approval": true,
+    "approved": true,
+    "advanced": true,
+    "gate_id": "release.publish.approval",
+    "action": "rollback",
+    "reason": "error_rate_critical",
+    "target_ref": "runx:release:rollback-judge-demo@2026.07.15.3",
+    "version": "2026.07.15.3"
   },
-  "harness": {
-    "local": {
-      "status": "passed",
-      "case_count": 2,
-      "assertion_error_count": 0,
-      "result": "local-harness.json"
-    },
-    "installed_package": {
-      "status": "passed",
-      "case_count": 2,
-      "assertion_error_count": 0,
-      "result": "hosted-installed-harness.json"
-    },
-    "cases": [
-      {
-        "name": "critical-signal-rollback",
-        "status": "sealed"
-      },
-      {
-        "name": "signal-contradictory-block",
-        "status": "needs_agent"
-      }
-    ]
+  "required_urls": {
+    "package": "https://runx.ai/x/ryde-play/rollback-judge@sha-90245faf0359",
+    "source": "https://github.com/RYDE-PLAY/runx/tree/06ee7dd89afbc09e7271fac50bf6429c97733c8f/skills/rollback-judge",
+    "pr": "https://github.com/runxhq/runx/pull/277",
+    "x_yaml": "https://raw.githubusercontent.com/RYDE-PLAY/runx/06ee7dd89afbc09e7271fac50bf6429c97733c8f/skills/rollback-judge/X.yaml",
+    "skill_md": "https://raw.githubusercontent.com/RYDE-PLAY/runx/06ee7dd89afbc09e7271fac50bf6429c97733c8f/skills/rollback-judge/SKILL.md",
+    "run_mjs": "https://raw.githubusercontent.com/RYDE-PLAY/runx/06ee7dd89afbc09e7271fac50bf6429c97733c8f/skills/rollback-judge/run.mjs",
+    "release_mjs": "https://raw.githubusercontent.com/RYDE-PLAY/runx/06ee7dd89afbc09e7271fac50bf6429c97733c8f/skills/rollback-judge/release.mjs",
+    "harness_evidence": "https://raw.githubusercontent.com/RYDE-PLAY/runx/06ee7dd89afbc09e7271fac50bf6429c97733c8f/skills/rollback-judge/harness-evidence.json"
   },
-  "dogfood": {
-    "status": "sealed",
-    "result": "registry-dogfood.json",
-    "receipt_ref": "runx:receipt:sha256:6f84aadb5bdb4810691f53e5e1be088bc4653f1b5ee6256fb3d395520515a2d6",
-    "live_source_read": {
-      "current_run": 29393017505,
-      "current_conclusion": "failure",
-      "current_marker_health": "degraded",
-      "current_observed_percent": 18.4,
-      "threshold_percent": 2,
-      "prior_run": 29392993457,
-      "prior_conclusion": "success",
-      "prior_marker_health": "healthy",
-      "prior_observed_percent": 0.4
-    },
-    "decision": {
-      "action": "rollback",
-      "reason": "error_rate_critical",
-      "version_target": "2026.07.15.3"
-    },
-    "receipt_act": {
-      "form": "review",
-      "target_ref": "https://github.com/RYDE-PLAY/frantic-102-rollback-judge/actions/runs/29393017505",
-      "artifact_ref": "runx:release:rollback-judge-demo@2026.07.15.3",
-      "summary": "action=rollback reason=error_rate_critical target=2026.07.15.3 source=github-actions:29393017505"
-    }
-  },
-  "receipt": {
-    "ref": "runx:receipt:sha256:6f84aadb5bdb4810691f53e5e1be088bc4653f1b5ee6256fb3d395520515a2d6",
-    "id": "sha256:6f84aadb5bdb4810691f53e5e1be088bc4653f1b5ee6256fb3d395520515a2d6",
-    "file": "runx-receipt.json",
-    "issuer": {
-      "kid": "rollback-judge-20260715-live-source-v1",
-      "type": "hosted"
-    }
-  },
-  "verification_public_key": {
-    "kid": "rollback-judge-20260715-live-source-v1",
-    "public_key_base64": "npbWNRBWZV6UOuOebL/amgtN/H1hUAr91uqeY1LrJg0=",
-    "file": "verification-key.json"
-  },
-  "verdict": {
-    "valid": true,
-    "receipt_id": "sha256:6f84aadb5bdb4810691f53e5e1be088bc4653f1b5ee6256fb3d395520515a2d6",
-    "signature": {
-      "mode": "production",
-      "status": "valid",
-      "kid": "rollback-judge-20260715-live-source-v1"
-    },
-    "findings": [],
-    "result": "runx-verify.json"
-  },
-  "checks": [
-    {
-      "id": "package_name",
-      "status": "passed",
-      "detail": "name is exactly rollback-judge"
-    },
-    {
-      "id": "pr_scope",
-      "status": "passed",
-      "detail": "PR 277 changes only skills/rollback-judge files"
-    },
-    {
-      "id": "registry_publish_read_install",
-      "status": "passed",
-      "detail": "published, read, and clean-installed sha-243da363bf91"
-    },
-    {
-      "id": "harness",
-      "status": "passed",
-      "detail": "local and installed-package harnesses passed 2/2"
-    },
-    {
-      "id": "live_source_dogfood",
-      "status": "passed",
-      "detail": "default judge fetched real failing and prior successful monitor runs at execution time"
-    },
-    {
-      "id": "receipt",
-      "status": "passed",
-      "detail": "post-publish dogfood receipt has valid production signature"
-    }
-  ]
+  "public_key_file": "public/verification-key.json",
+  "evidence_file": "public/evidence.json",
+  "graph_state_file": "public/graph-state.json"
 }
